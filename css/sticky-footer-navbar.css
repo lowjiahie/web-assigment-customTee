@@ -1,15 +1,9 @@
 /* Custom page CSS
 -------------------------------------------------- */
 /* Not required for template or sticky footer method. */
-body {
-  min-height: 75rem;
-  padding-top: 4.5rem;
-}
 
-main > .container {
-  padding: 60px 15px 0;
-}
-
+  /* Modify the background color */ 
+  
 .footer {
   background-color: #f5f5f5;
 }

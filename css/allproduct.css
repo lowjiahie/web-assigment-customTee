@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat|Roboto&display=swap');
+
+
+
+body{
+  font-family: sans-serif;
+  background-color:hsla(0,0%,75%,0.2);
+}
+.spacing{
+    margin: 45px auto;
+}
+
+/* membership gallery */
+.gallery-section{
+  
+  width: 100%;
+  padding-top: 50px;
+  padding-bottom: 100px;
+
+}
+
+
+.back-image{
+     background-image: url("../img/back-allproduct.jfif");
+     background-repeat: repeat-x;
+     background-size: contain;
+    
+}
+.back-image .content{
+     background: rgb(0, 0, 0); 
+     background: rgba(0, 0, 0, 0.5);
+     color: #f1f1f1; 
+     height:280px;
+}
+
+.inner-width{
+    
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 20px;
+}
+ 
+.content h1{
+  padding-top: 90px;
+  text-align: center;
+  text-transform: uppercase;
+  color: white;
+ 
+ 
+}
+
+.border{
+  width: 100px;
+  height: 4px;
+  background: white;
+  margin: 50px auto;
+  
+}
+
+.gallery-section .gallery{
+  display: flex;
+  flex-wrap: wrap-reverse;
+  justify-content: center;
+}
+
+.gallery-section .space {
+  
+  width: 200px;
+  height: 200px;
+  
+  
+  cursor: pointer;
+  margin: 10px;
+}
+
+.gallery-section .space img{
+  width: 200px;
+  height: 100%;
+  transition: 0.5s;
+}
+
+
+.space .image:hover img{
+  transform: scale(0.6) rotate(12deg);
+}
+
+  @media screen and (max-width:960px) {
+     
+    .inner-width{
+      width: 100%;
+      max-width: 1000px;
+      margin: 0;
+      padding: 0 20px;
+    }
+  
+    
+  
+}
+
+
+@media screen and (max-width:480px) {
+  .inner-width{
+    width: 100%;
+    max-width: 1200px;
+    margin: 0;
+    padding: 0 20px;
+  }
+  .back-image .content{
+     
+     height:250px;
+    }
+}
+@media screen and (max-width:374px) {
+  
+  .back-image .content{
+     
+     height:200px;
+    }
+    
+    .content h1{
+  padding-top: 50px;
+  
+ 
+}
+}
+
+
+   
