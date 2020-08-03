@@ -1,0 +1,208 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Jul 29, 2020, 12:36:01 AM
+    Author     : Admin-jiahie
+*/
+
+
+.back-image{
+     background-image: url("../img/t-shirtback.png");
+     background-repeat: no-repeat;
+     background-size: cover;
+}
+.container-fluid{
+    background: rgba(0, 0, 0, 0.5);
+     color: #f1f1f1; 
+     height:280px;
+}
+.content{
+    padding: 65px 0;
+}
+
+
+ .border{
+  width: 100%;
+  height: 4px;
+  background: white;
+ 
+}
+
+.head1-custom{
+    margin: 20px 0;
+    
+}
+.head1-custom h6{
+    text-align: center;
+    letter-spacing: 3px;
+    
+}
+ 
+.head2-custom{
+    margin: 20px 0;
+    
+}
+.head2-custom h1{
+    text-align: center;
+    font-weight: 500;
+    letter-spacing:4px;
+    font-size: 60px;
+}
+
+.title-category{
+    text-align: center;
+    justify-content: center;
+}
+
+.title{
+    background-color: black;
+    padding: 7px;
+}
+.title .row h1{
+    color: white;
+    padding-left: 10px;
+}
+.title .row .col-auto span {
+    color: white;
+   
+}
+.container .d-inline-block{
+    padding: 15px 10px 0px;
+    text-align: center;
+    margin-bottom:20px; 
+}
+.container .d-inline-block a{
+    text-decoration: none;
+    color: white;
+}
+.container .bg-custom{
+    background-color: black;
+    
+}
+.fa-caret-down{
+    font-size:35px;
+}
+
+
+.fa-caret-up{
+    font-size:30px; 
+    margin:10px  10px ;
+}
+
+.card-img-top {
+    width: 100%;
+    height: 55vh;
+    object-fit:cover;
+}
+
+/* back to top */
+.gotopbtn{
+    position: fixed;
+    width: 50px;
+    height: 50px;
+    background:rgba(0, 0, 0, .8);
+    bottom: 40px;
+    right: 50px;
+    border-radius: 20px;
+    text-decoration: none;
+    text-align: center;
+    line-height: 50px;
+    color: white;
+    font-size: 22px;
+}
+
+.btn-view{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  background-color:rgba(255, 255, 255,0.5);
+  box-shadow:3px 3px 5px 6px #ccc;
+  color: black;
+  font-size: 16px;
+  padding: 9px 30px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  text-align: center;
+  opacity: 0;
+ 
+}
+.img-block:hover .img-fluid {
+  opacity: 0.3;
+}
+
+.img-block:hover .btn-view {
+   opacity: 1;
+    border:1px solid blue;
+    text-decoration: none;
+}
+.heading-deco{
+    color: black;
+    font-size: 18px;
+}
+
+ .price{
+    color: rgb(120, 120, 120);
+    font-size: 30px;
+}
+
+
+
+.circle{
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    float: left;
+    margin: 10px 3px 0;
+}
+
+
+
+
+
+ @media (max-width: 764px) {
+   .card-img-top {
+    width: 100%;
+    height: 35vh;
+    object-fit:cover;
+}
+}
+ @media (max-width: 575px) {
+   .card-img-top {
+    width: 100%;
+    height: 70vh;
+    object-fit:fill;
+}
+}
+
+
+ @media (max-width: 450px) {
+    .card-img-top {
+    width: 100%;
+    height: 55vh;
+    object-fit:cover;
+}
+}
+ @media (max-width: 350px) {
+    .container .d-inline-block{
+        padding: 10px 10px 0;
+        text-align: center;
+        margin:10px 90px; 
+    }
+}
+ @media (max-width: 340px) {
+    .fa-caret-up{
+        margin: 0 130px;
+    }
+}
+
+
+
+
+
+ 

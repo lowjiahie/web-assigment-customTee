@@ -1,5 +1,6 @@
 
-    <header>
+
+<header style="height: 90.56px;">
   <!-- Fixed navbar -->
   <nav class="navbar navbar-expand-xl navbar-custom navbar-light fixed-top">
     
@@ -51,11 +52,11 @@
       </ul>
       <form class="form-inline mt-0 mt-md-0">
           <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-primary my-2 my-sm-0" type="submit"><i class="fas fa-search"></i></button>
+          <button class="btn btn-outline-primary my-2 my-sm-0" type="submit"><i class="fas fa-search" ></i></button>
       </form>
       <ul class="navbar-nav  mt-0 mt-sm-0">    
             <li class="nav-item">
-                <a class="nav-link" href="#"><i class="fas fa-shopping-cart"style="margin:0 5px 0 0"></i>Cart</a>
+                <a class="nav-link" href="../cart.php"><i class="fas fa-shopping-cart"style="margin:0 5px 0 0"></i>Cart</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" onclick="document.getElementById('id01').style.display='block';" href="#"> <i class="fas fa-user"style="margin:0 5px 0 0" ></i>My Account</a>

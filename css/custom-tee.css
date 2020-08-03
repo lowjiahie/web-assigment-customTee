@@ -1,0 +1,126 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Jul 31, 2020, 4:56:09 PM
+    Author     : Admin-jiahie
+*/
+
+.back-image{
+     background-image: url("../img/custom-teeback.png");
+     background-repeat: no-repeat;
+     background-size: cover;
+}
+.container-fluid{
+    background: rgba(0, 0, 0, 0.5);
+     color: #f1f1f1; 
+     height:280px;
+}
+.content{
+    padding: 65px 0;
+}
+
+
+ .border{
+  width: 100%;
+  height: 4px;
+  background: white;
+ 
+}
+
+.head1-custom{
+    margin: 20px 0;
+    
+}
+.head1-custom h6{
+    text-align: center;
+    letter-spacing: 3px;
+    
+}
+ 
+.head2-custom{
+    margin: 10px 0;
+    
+}
+.head2-custom h1{
+    text-align: center;
+    font-weight: 500;
+    letter-spacing:4px;
+    font-size: 45px;
+}
+
+.card .border-style{
+    border: 1px solid black;
+    border-radius: 20px;
+}
+
+.title-head h6{
+    text-align: center;
+    letter-spacing:3px;
+    font-size: 38px;
+}
+
+.line{
+    width: 100%;
+    height: 2px;
+    background:rgb(211,211,211);
+}
+
+/* back to top */
+.gotopbtn{
+    position: fixed;
+    width: 50px;
+    height: 50px;
+    background:rgba(0, 0, 0, .8);
+    bottom: 40px;
+    right: 50px;
+    border-radius: 20px;
+    text-decoration: none;
+    text-align: center;
+    line-height: 50px;
+    color: white;
+    font-size: 22px;
+}
+
+
+.btn-view{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  background-color:rgba(255, 255, 255,0.5);
+  box-shadow:3px 3px 5px 6px #ccc;
+  color: black;
+  font-size: 16px;
+  padding: 9px 30px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  text-align: center;
+  opacity: 0;
+  
+ 
+}
+.img-block:hover .img-fluid {
+  opacity: 0.3;
+}
+
+.img-block:hover .btn-view {
+   opacity: 1;
+    border:1px solid blue;
+    text-decoration: none;
+}
+.heading-deco{
+    color: black;
+}
+ 
+ .price{
+    color: rgb(120, 120, 120);
+    font-size: 25px;
+}
+
+
+

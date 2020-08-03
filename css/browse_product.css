@@ -1,0 +1,143 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Aug 2, 2020, 11:22:33 AM
+    Author     : Admin-jiahie
+*/
+.preview {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column; }
+
+
+  @media screen and (max-width: 996px) {
+    .preview {
+      margin-bottom: 20px; } }
+
+    
+.preview-pic {
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1; }
+
+.preview-thumbnail.nav-tabs {
+  border: none;
+  margin-top: 15px; 
+  
+}
+  .preview-thumbnail.nav-tabs li {
+    width: 25%;
+    margin-right: 2.5%; 
+    
+  }
+    .preview-thumbnail.nav-tabs li img {
+      max-width: 100%;
+      display: block;
+      
+      
+    }
+    .preview-thumbnail.nav-tabs li a {
+      padding: 0;
+      margin: 0;
+      
+    }
+    .preview-thumbnail.nav-tabs li:last-of-type {
+      margin-right: 0; }
+
+    .pic1,.pic2{
+        opacity: 0.5;
+    } 
+   .pic1:hover ,.pic2:hover {
+     opacity: 1;
+    }
+   .pic1:focus ,.pic2:focus {
+     opacity: 1;
+    }
+
+   
+    
+.tab-content {
+  overflow: hidden; }
+  .tab-content img {
+    width: 100%;
+    -webkit-animation-name: opacity;
+            animation-name: opacity;
+    -webkit-animation-duration: .3s;
+            animation-duration: .3s; }
+
+/* back to top */
+.gotopbtn{
+    position: fixed;
+    width: 50px;
+    height: 50px;
+    background:rgba(0, 0, 0, .8);
+    bottom: 40px;
+    right: 50px;
+    border-radius: 20px;
+    text-decoration: none;
+    text-align: center;
+    line-height: 50px;
+    color: white;
+    font-size: 22px;
+}
+
+.price{
+    color: rgb(120, 120, 120);
+    font-size: 30px;
+}
+
+.text-set{
+    font-size: 18px;
+}
+/* Product Color */
+.product-color {
+  margin-bottom: 30px;
+}
+ 
+.color-choose div {
+  display: inline-block;
+}
+ 
+.color-choose input[type="checkbox"] {
+  display: none;
+}
+ 
+.color-choose input[type="checkbox"] + label span {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  margin: -1px 4px 0 0;
+  vertical-align: middle;
+  cursor: pointer;
+  border-radius: 50%;
+}
+ 
+.color-choose input[type="checkbox"] + label span {
+  border: 2px solid #FFFFFF;
+  box-shadow: 0 1px 3px 0 rgba(0,0,0,0.33);
+}
+ 
+.color-choose input[type="checkbox"]#red + label span {
+  background-color: #C91524;
+}
+.color-choose input[type="checkbox"]#blue + label span {
+  background-color: #314780;
+}
+.color-choose input[type="checkbox"]#black + label span {
+  background-color: #323232;
+}
+ 
+.color-choose input[type="checkbox"]:checked + label span {
+  
+  border:2px solid #000; 
+}
