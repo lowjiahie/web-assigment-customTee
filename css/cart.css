@@ -1,0 +1,19 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Aug 4, 2020, 7:16:14 PM
+    Author     : Admin-jiahie
+*/
+
+.circle{
+    height: 25px;
+    width: 25px;
+    border-radius: 50%;
+    
+    
+     border: 3px solid #FFFFFF;
+  box-shadow: 0 0 0 2px #CCC;
+}

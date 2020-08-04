@@ -28,31 +28,107 @@
 include('includes/sidebar.php'); 
 include('includes/adminnav.php'); 
 ?>
-
-
- <!-- Page Content  -->
-        
-
-            <h2>Collapsible Sidebar Using Bootstrap 4</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-
-            <div class="line"></div>
-
-            <h2>Lorem Ipsum Dolor</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-
-            <div class="line"></div>
-
-            <h2>Lorem Ipsum Dolor</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-
-            <div class="line"></div>
-
-            <h3>Lorem Ipsum Dolor</h3>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+ 
+ <div class="container ">
+     <h4 class="h4">Dashboard</h4>
+    <div class="row">
+        <div class="col">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item text-primary"><a href="#">Dashboard</a></li>
+                    
+                </ol>
+            </nav>
         </div>
     </div>
+    </div>
+    <div class="container mb-5">
+ <div class="row justify-content-md-center">
+    <div class="col col-lg-3">
+       <div class="card text-white bg-primary mb-3" style="max-width: 18rem;">
+        <div class="card-body">
+          <h5 class="card-title text-white h5 text-lg-center">ORDER PENDING</h5>
+          <h3 class="card-title text-white h3 text-lg-center">1</h3>
+          
+        </div>
+      </div>
+    </div>
+     <div class="col col-lg-3">
+       <div class="card text-white bg-danger mb-3" style="max-width: 18rem;">
+        <div class="card-body">
+          <h5 class="card-title text-white h5 text-lg-center">ORDER CANCEL</h5>
+          <h3 class="card-title text-white h3 text-lg-center">0</h3>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="card text-white bg-info mb-3" style="max-width: 18rem;">
+        <div class="card-body">
+          <h5 class="card-title text-white h5 text-lg-center">ORDER COMPLETE</h5>
+          <h3 class="card-title text-white h3 text-lg-center">1</h3>
+        </div>
+      </div>
+    </div>
+    <div class="col col-lg-3">
+       <div class="card text-white bg-success mb-3" style="max-width: 18rem;">
+        <div class="card-body">
+         <h5 class="card-title text-white h5 text-lg-center">TODAY INCOME</h5>
+          <h3 class="card-title text-white h3 text-lg-center">RM50.00</h3>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    <div class="container mb-2">
+       <h4 class="h4 mb-4">Recent Order</h4>
+       <div class="text-right">
+       <a href="#" type="button" class="btn btn-sm btn-primary mb-3 ">View All</a>
+       </div>
+    <div class="row">
+        <div class="col-12">
+            <div class="table-responsive">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th scope="col">Order ID</th>
+                            <th scope="col">Item</th>
+                            <th scope="col">Order by</th>
+                            <th scope="col">Date</th>
+                            <th scope="col">Address</th>
+                            <th scope="col">Status</th>
+                            <th scope="col">Total</th>
+                            <th scope="col">Action</th>
+                       
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+                        <tr>
+                            <td>1001</td>
+                            <td>Round Neck T-Shirt with customized A3 size printing</td>
+                            <td>C0001</td>
+                            <td>15/06/2020</td>
+                            <td>91,Kampung Baru Bangi,43000 Kajang,Selangor.</td>
+                            <td>
+                                <input type="button"  class="btn btn-sm btn-primary" value="pending" disabled>
+                            </td>
+                            <td>RM 15.00</td>
+                            <td class="text-right">
+                                <button type="button" class="btn btn-sm btn-secondary"><i class="fas fa-edit"></i></button> 
+                                <button type="button" class="btn btn-sm btn-danger"><i class="fa fa-trash"></i> </button> 
+                            </td>
+                        </tr>
+                 
+                    </tbody>
+                </table>
+            </div>
+        </div>
+       
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
         
         
  <!-- jQuery CDN - Slim version (=without AJAX) -->

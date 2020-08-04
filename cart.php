@@ -16,7 +16,7 @@
     <!-- Bootstrap core CSS -->
     <link href="assets/dist/css/bootstrap.min.css" rel="stylesheet">
    
-    <link href="css/t-shirt.css" rel="stylesheet">
+    <link href="css/cart.css" rel="stylesheet">
     
     <!-- Custom styles for this template -->
     <link href="css/pop-up-login.css" rel="stylesheet">
@@ -42,7 +42,88 @@
     <?php
         include('includes/clientnav.php'); 
     ?>
-
+        <section class="jumbotron text-center bg-secondary text-white">
+    <div class="container">
+        <h1 class="jumbotron-heading">Shopping Cart</h1>
+     </div>
+</section>
+    <form method="POST" action="checkout.php" >
+<div class="container mb-4">
+    <div class="row">
+        <div class="col-12">
+            <div class="table-responsive">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th scope="col">Product img</th>
+                            <th scope="col">Product</th>
+                            <th scope="col">Size</th>
+                            <th scope="col">Color</th>
+                            <th scope="col" class="text-center">Quantity</th>
+                            <th scope="col" class="text-right">Price</th>
+                            <th> </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+                        <tr>
+                            <td><img style="width: 100px;height: 100px;" src="img/custom/52ECBE2E-7524-40F9-8032-589F5E16B653-400x400.jpeg" /> </td>
+                            <td>Round Neck T-Shirt with customized A3 size printing</td>
+                            <td>M</td>
+                            <td><div class="circle color1" style="background-color:black;"></div></td>
+                            <td>
+                                <input class="form-control" type="number" id="quantity" name="quantity" min="1" max="50" value="1"/>
+                                <input class="btn btn-dark" type="button" name="update" value="Update">
+                            </td>
+                            <td class="text-right">RM 15.00</td>
+                            <td class="text-right"><button type="button" class="btn btn-sm btn-danger"><i class="fa fa-trash"></i> </button> </td>
+                        </tr>
+                        
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>Sub-Total</td>
+                            <td class="text-right">RM 15.00</td>
+                            
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td>Shipping</td>
+                            <td class="text-right">RM 5.00</td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td><strong>Total</strong></td>
+                            <td class="text-right"><strong>RM 20.00</strong></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="col mb-2">
+            <div class="row">
+                <div class="col-sm-12  col-md-6">
+                    <a class="btn btn-block btn-light" href="all_product.php">Continue Shopping</a>
+                </div>
+                <div class="col-sm-12 col-md-6 text-right">
+                    <input class="btn btn-lg btn-block btn-success text-uppercase" type="submit" name="checkout"  value="Checkout">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</form>
     <?php
         include('includes/footer.php'); 
     ?>

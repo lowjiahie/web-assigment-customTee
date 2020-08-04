@@ -15,7 +15,7 @@
    
     <!-- Bootstrap core CSS -->
     <link href="assets/dist/css/bootstrap.min.css" rel="stylesheet">
-   
+   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link href="css/browse_product.css" rel="stylesheet">
     
     <!-- Custom styles for this template -->
@@ -37,19 +37,7 @@
     font-size: 15px;
   }
     </style>
-    <script>
-        $(document).ready(function() {
- 
-  $('.color-choose input').on('click', function() {
-      var headphonesColor = $(this).attr('data-image');
- 
-      $('.active').removeClass('active');
-      $('.left-column img[data-image = ' + headphonesColor + ']').addClass('active');
-      $(this).addClass('active');
-  });
- 
-});
-    </script>
+
     
 </head>
 <body>
@@ -83,10 +71,16 @@
 			<div class="preview-pic tab-content">
                             <div class="tab-pane active" id="pic-1"><img src="img/custom/52ECBE2E-7524-40F9-8032-589F5E16B653-400x400.jpeg" /></div>
                             <div class="tab-pane" id="pic-2"><img src="img/custom/font.PNG" /></div>
+                            <div class="tab-pane" id="pic-3"><img src="img/t-shirts/men/cotton/1414120783_ct7105.x82073.jpg" ></div>
+                            <div class="tab-pane" id="pic-4"><img src="img/t-shirts/men/cotton/1457495547_ct7108-768x768.jpg" ></div>
+                            <div class="tab-pane" id="pic-5"><img src="img/t-shirts/men/cotton/1414120768_ct7102.x82073.jpg" ></div>
 			</div>
 			    <ul class="preview-thumbnail nav nav-tabs">
                                 <li class="active"><a class="pic2"data-target="#pic-1" data-toggle="tab"><img class="pic1" src="img/custom/52ECBE2E-7524-40F9-8032-589F5E16B653-400x400.jpeg" /></a></li>
                                 <li><a href=".pic2" data-target="#pic-2" data-toggle="tab"><img class="pic2" src="img/custom/font.PNG" /></a></li>
+                                <li><a href=".pic2" data-target="#pic-3" data-toggle="tab"><img class="pic2" src="img/t-shirts/men/cotton/1414120783_ct7105.x82073.jpg" /></a></li>
+                                <li><a href=".pic2" data-target="#pic-4" data-toggle="tab"><img class="pic2" src="img/t-shirts/men/cotton/1457495547_ct7108-768x768.jpg" /></a></li>
+                                <li><a href=".pic2" data-target="#pic-5" data-toggle="tab"><img class="pic2" src="img/t-shirts/men/cotton/1414120768_ct7102.x82073.jpg" /></a></li>
 			    </ul>			
 		</div>
 
@@ -99,9 +93,10 @@
                 <div class="col-12 col-md-12 col-lg-10">
                     <div class="card border-0">
                         <div class="card-body">
-                            <h4 class="card-title">Round Neck T-Shirt with customized A3 size printing</h4>
+                            <h4 class="card-title h4">Round Neck T-Shirt with customized A3 size printing</h4>
                             <h3 class="card-text price">RM 15.00</h3>
                             <p class="card-text text-set text-muted"><small>Material/Fabric : 100% Cotton<br>Weight: 200g/m²<br>Sizes Available : XS-3XL (Unisex)</small></p>
+                            <form id="form">
                             <table>
                                 <tbody>
                                     <tr>
@@ -112,7 +107,7 @@
                                     <tr>
                                         <td>
                                             <span>
-                                               <select onChange="dropdownTip(this.value)" name="search_type" style="margin-right:10px; margin-top:4px; margin-bottom: 7px;">
+                                               <select id="selecter" onChange="dropdownTip(this.value)" name="search_type" style="margin-right:10px; margin-top:4px; margin-bottom: 7px;">
                                                     <option selected="selected" value="XS">XS</option>    
                                                     <option value="S">S</option>
                                                     <option value="M">M</option>
@@ -147,14 +142,22 @@
                                                 </div>
                                              </div>
                                         </td>
-                                
+                                        
                                     </tr>
-                                   
+                                    <tr>
+                                        <td>
+                                            <div>
+                                             <label for="quantity">QTY:</label>
+                                              <input type="number" id="quantity" name="quantity" min="1" max="50" value="1">
+                                              <input onclick="addToCart()" class="btn btn-primary btn-lg" type="button" name="add" value="Add to cart" />
+                                             </div>
+                                        </td>
+                                    </tr>
                            
 
                                 </tbody>
                             </table>
-                            
+                            </form>
                             </div>
                         </div>
                     </div>
@@ -163,10 +166,57 @@
                
                
             </div>
+        
         </div>
-
+     
     </div>
-</div>
+    <div class="container" style="margin-bottom:10px;">
+        <div class="title-head"><h6>Descriptions</h6></div>
+        <div class="line"></div>
+    </div>
+    <div class="container">
+        <div class="col-md-8 offset-md-2">
+        <div class="card text-center">
+        <div class="card-header">
+  	<ul class="nav nav-tabs">
+        		<li class="nav-item">
+        			<a href="#colors" class="nav-link active" role="tab" data-toggle="tab">Colors</a>
+        		</li>
+
+        		<li class="nav-item">
+        			<a href="#size" class="nav-link" role="tab" data-toggle="tab">Size</a>
+        		</li>
+        		<li class="nav-item">
+        			<a href="#download" class="nav-link" role="tab" data-toggle="tab">Download</a>
+        		</li>
+        	</ul>
+
+        	
+        </div>
+            <div class="card-body">
+            <div class="tab-content">
+                <div role="tabpanel" class="tab-pane active" id="colors">
+                    <img class="img-fluid" src="img/t-shirts/men/cotton/oren-sport-ct71-cotton-t-shirt.x82073.jpg" alt="Card image cap">
+                </div>
+                <div role="tabpanel" class="tab-pane fade" id="size">
+                    <img class="img-fluid" src="img/t-shirts/men/cotton/SC_CT71.png" alt="Card image cap">
+                </div>
+                <div role="tabpanel" class="tab-pane fade" id="download">
+                    <p class="h5 mb-5">Download and start your design</p>
+                    <div class="row justify-content-center">
+                        <div class="col-4">
+                            <img class="img-fluid mb-5" src="img/custom/custom-design/font.PNG" alt="Card image cap">
+                        </div>
+                     
+                    </div>
+                    <a
+                    <a href="img/custom/download-font/font.PNG"class="btn btn-secondary btn-lg" download><i class="fa fa-download"></i> Download</a>
+                </div>
+        	</div>
+        </div>
+        </div>
+        </div>
+     </div>  
     
     <a class="gotopbtn" id="topbtn" href="#"> <i class="fas fa-angle-up"></i></a>    
     <script type="text/javascript" src="js/appeargotop.js"></script>
@@ -204,8 +254,9 @@
            
     })
     }
+  
     </script>
-   
+    <script src="js/addtocart.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script>window.jQuery || document.write('<script src="../assets/js/vendor/jquery.slim.min.js"><\/script>')</script><script src="assets/dist/js/bootstrap.bundle.js"></script>
 </body>
