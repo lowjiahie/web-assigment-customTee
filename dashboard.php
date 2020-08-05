@@ -35,7 +35,7 @@ include('includes/adminnav.php');
         <div class="col">
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item text-primary"><a href="#">Dashboard</a></li>
+                    <li class="breadcrumb-item  active" aria-current="page">Dashboard</li>
                     
                 </ol>
             </nav>

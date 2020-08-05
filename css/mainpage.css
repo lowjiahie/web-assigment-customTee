@@ -1,0 +1,43 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 28 Jul 2020, 21:45:29
+    Author     : Forge-15
+*/
+
+
+
+.background-brand{
+    background-color: rgba(239, 204, 204, 1);
+    width: auto;
+}
+
+.header-services{  
+    width: auto;
+    background-color: rgba(190, 242, 187, 1); 
+}
+
+
+
+.header-custom h1{
+    text-align: center;
+    padding-top: 20px;
+    
+}
+
+
+
+span.row{
+    max-width: 180px;
+    margin: auto;
+     
+}
+
+header-services{
+    width: auto;
+    border-radius: 50%;
+    margin-left: 100px;
+}

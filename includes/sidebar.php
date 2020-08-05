@@ -9,16 +9,16 @@
                 <div class="border"style="width: 100px;background: #333;margin: 20px  auto 20px;"></div>
                 
                 <li >
-                    <a href="#" >Dashboard</a>
+                    <a href="dashboard.php" >Dashboard</a>
                 </li>
                 <li>
                     <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Product</a>
                     <ul class="collapse list-unstyled" id="homeSubmenu" >
                         <li>
-                            <a href="#">All product</a>
+                            <a href="adminproduct.php">All product</a>
                         </li>
                         <li>
-                            <a href="#">Add product</a>
+                            <a href="adminAddProduct.php">Add product</a>
                         </li>
                         
                     </ul>
@@ -27,10 +27,10 @@
                     <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Category</a>
                     <ul class="collapse list-unstyled" id="pageSubmenu">
                         <li>
-                            <a href="#">All category</a>
+                            <a href="admincategory.php">All category</a>
                         </li>
                         <li>
-                            <a href="#">Add category</a>
+                            <a href="adminAddCategory.php">Add category</a>
                         </li>
                     </ul>
                 </li>

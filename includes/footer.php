@@ -1,6 +1,6 @@
 
       
- 
+ <link href="css/sticky-footer-navbar.css" rel="stylesheet">
     <footer class="footer mt-auto py-3">
   <div class="container">
     <div class="row">
@@ -15,11 +15,11 @@
     <div class="col-5 col-lg">
       <h5>Overview</h5>
       <ul class="list-unstyled text-small">
-        <li><a class="text-muted" href="#">Home</a></li>
-        <li><a class="text-muted" href="#">All Product</a></li>
-        <li><a class="text-muted" href="#">Create Design</a></li>
-        <li><a class="text-muted" href="#">Brands</a></li>
-        <li><a class="text-muted" href="#">Service</a></li>
+        <li><a class="text-muted" href="mainpage.php">Home</a></li>
+        <li><a class="text-muted" href="all_product.php">All Product</a></li>
+        <li><a class="text-muted" href="#">About Us</a></li>
+        <li><a class="text-muted" href="ContactUs.php">Contact Us</a></li>
+        <li><a class="text-muted" href="Custom.php">Service</a></li>
       </ul>
     </div>
       
@@ -41,20 +41,20 @@
     <div class="col-12 col-md">
       <h5>Service</h5>
       <ul class="list-unstyled text-small">
-        <li><a class="text-muted" href="#">Create Design</a></li>
-        <li><a class="text-muted" href="#">Silkscreen Printing</a></li>
-        <li><a class="text-muted" href="#">Embroidery Services</a></li>
-        <li><a class="text-muted" href="#">Heat Transfer Printing</a></li>
+        <li><a class="text-muted" href="Custom.php">Create Design</a></li>
+        <li><a class="text-muted" href="Silkscreen.php">Silkscreen Printing</a></li>
+        <li><a class="text-muted" href="Embroidery.php">Embroidery Services</a></li>
+        <li><a class="text-muted" href="Heat-Transfer.php">Heat Transfer Printing</a></li>
       </ul>
     </div>
     <div class="col-auto col-md">
       <h5>Contact Us</h5>
       <ul class="list-unstyled  list-group list-group-horizontal text-small">
-          <li><a class="text-muted" href="#"><img src="img/facebookicon.png" alt="facebookicon.png" width="30px" height="30px" ></img></a></li>
+          <li><a class="text-muted" href="https://www.facebook.com/Xx.hsienjian.xX/"><img src="img/facebookicon.png" alt="facebookicon.png" width="30px" height="30px" ></img></a></li>
           <span>&nbsp;&nbsp;</span>
-        <li><a class="text-muted" href="#"><img src="img/instaicon.png" alt="facebookicon.png" width="30px" height="30px" ></img></a></li>
+        <li><a class="text-muted" href="https://www.instagram.com/hsien_jian/"><img src="img/instaicon.png" alt="insta" width="30px" height="30px" ></img></a></li>
          <span>&nbsp;&nbsp;</span>
-        <li><a class="text-muted" href="#"><img src="img/whatsappicon.png" alt="facebookicon.png" width="30px" height="30px" ></img></a></li><br>
+        <li><a class="text-muted" href="https://wa.link/lxgct5/"><img src="img/whatsappicon.png" alt="whatapps" width="30px" height="30px" ></img></a></li><br>
         
       </ul>
     </div>

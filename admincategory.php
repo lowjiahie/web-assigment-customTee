@@ -1,4 +1,4 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 
 <head>
@@ -10,7 +10,8 @@
     
     <!-- Bootstrap CSS CDN -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
-    
+  
+   
       <!-- Our Custom CSS -->
     <link rel="stylesheet" href="css/style.css">
     <!-- Font Awesome JS -->
@@ -35,20 +36,13 @@ include('includes/adminnav.php');
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">All Product</li>
+                    <li class="breadcrumb-item active" aria-current="page">All category</li>
                 </ol>
             </nav>
         </div>
-        
     </div>
-     
     </div>
-   
     
-    
-
-           
-            
     <div class="container mb-2">
     <div class="row">
         <div class="col-12">
@@ -59,12 +53,8 @@ include('includes/adminnav.php');
                             <th scope="col">ID</th>
                             <th scope="col">Image</th>
                             <th scope="col">Name</th>
-                            <th scope="col">Category</th>
-                            <th scope="col">Size</th>
-                            <th scope="col">Color</th>
-                            <th scope="col">Price</th>
                             <th scope="col">Status</th>
-                            <th scope="col">Action</th>
+                            <th scope="col" class="text-center">Action</th>
                        
                         </tr>
                     </thead>
@@ -72,28 +62,22 @@ include('includes/adminnav.php');
                         
                         <tr>
                             <td>1</td>
-                            <td><img style="width: 70px;height: 70px;" src="img/custom/52ECBE2E-7524-40F9-8032-589F5E16B653-400x400.jpeg" /></td>
-                            <td>Round Neck T-Shirt with customized A3 size printing</td>
+                            <td><img style="width: 70px;height: 70px;" src="img/customtee-01.png" /></td>
                             <td>Custom-Tee</td>
-                            <td>XS-3XL</td>
-                            <td>Red,Blue,Black</td>
-                            <td>RM 15.00</td>
+                        
                             <td><input type="button"  class="btn btn-sm btn-primary" value="Active" disabled></td>
-                            <td class="text-right">
-                                <a href="adminEditProduct.php" type="button" class="btn btn-sm btn-secondary"><i class="fas fa-edit"></i></a> 
+                            <td class="text-center">
+                                <a href="adminEditCategory.php" type="button" class="btn btn-sm btn-secondary"><i class="fas fa-edit"></i></a> 
                                 <button type="button" class="btn btn-sm btn-danger"><i class="fa fa-trash"></i> </button> 
                             </td>
                         </tr>
                         <tr>
                             <td>2</td>
-                            <td><img style="width: 70px;height: 70px;" src="img/t-shirts/men/cotton/G63000-400x400.jpg" /></td>
-                            <td>CT71 Cotton Men Round Neck T-shirt</td>
+                            <td><img style="width: 70px;height: 70px;" src="img/t-shirt.png" /></td>
                             <td>T-Shirts</td>
-                            <td>XS-3XL</td>
-                            <td>Red,Blue,Black</td>
-                            <td>RM 19.00</td>
-                            <td><input type="button"  class="btn btn-sm btn-danger" value="Inactive" disabled></td>
-                            <td class="text-right">
+                       
+                            <td><input type="button"  class="btn btn-sm btn-primary" value="Active" disabled></td>
+                            <td class="text-center">
                                 <button type="button" class="btn btn-sm btn-secondary"><i class="fas fa-edit"></i></button> 
                                 <button type="button" class="btn btn-sm btn-danger"><i class="fa fa-trash"></i> </button> 
                             </td>
@@ -107,10 +91,7 @@ include('includes/adminnav.php');
         </div>
     </div>
  </div>
-
-    
-    
-    
+        
  <!-- jQuery CDN - Slim version (=without AJAX) -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <!-- Popper.JS -->
@@ -128,4 +109,5 @@ include('includes/adminnav.php');
 </body>
 
 </html>
+        
         

@@ -104,7 +104,7 @@
                             <td></td>
                             <td></td>
                             <td></td>
-                            <td><strong>Total</strong></td>
+                            <td><strong>Grand Total</strong></td>
                             <td class="text-right"><strong>RM 20.00</strong></td>
                         </tr>
                     </tbody>
