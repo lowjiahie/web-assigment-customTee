@@ -35,10 +35,10 @@
                     </ul>
                 </li>
                 <li>
-                    <a href="#">Customer</a>
+                    <a href="adminCustomer.php">Customer</a>
                 </li>
                 <li>
-                    <a href="#">Order</a>
+                    <a href="adminOrder.php">Order</a>
                 </li>
             </ul>
         </nav>
