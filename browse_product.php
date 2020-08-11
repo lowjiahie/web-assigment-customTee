@@ -95,7 +95,7 @@
                         <div class="card-body">
                             <h4 class="card-title h4">Round Neck T-Shirt with customized A3 size printing</h4>
                             <h3 class="card-text price">RM 15.00</h3>
-                            <p class="card-text text-set text-muted"><small>Material/Fabric : 100% Cotton<br>Weight: 200g/m²<br>Sizes Available : XS-3XL (Unisex)</small></p>
+                            <p class="card-text text-set text-muted"><small>Material/Fabric : 100% Cotton<br>Weight: 200g/m²<br>Sizes Available : XS-3XL (Unisex)<br>Service: Heat Transfer Printing</small></p>
                             <form id="form">
                             <table>
                                 <tbody>
@@ -143,6 +143,20 @@
                                              </div>
                                         </td>
                                         
+                                    </tr>
+                                     <tr>
+                                        <td>
+                                            <span style="color:">Method : &nbsp;</span><span id="" ></span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            
+                                         <select id="method" name="method" style="margin-right:10px; margin-top:4px; margin-bottom: 7px;">
+                                                    <option selected="selected" value="Design-by-yourself">Design by yourself</option>    
+                                                    <option value="Design-by-myprinting">Design by Myprinting</option>
+                                         </select>
+                                        </td>
                                     </tr>
                                     <tr>
                                         <td>
@@ -209,8 +223,8 @@
                         </div>
                      
                     </div>
-                    <a
-                    <a href="img/custom/download-font/font.PNG"class="btn btn-secondary btn-lg" download><i class="fa fa-download"></i> Download</a>
+                    
+                    <a href="img/custom/crew_front.png"class="btn btn-secondary btn-lg" download><i class="fa fa-download"></i> Download</a>
                 </div>
         	</div>
         </div>

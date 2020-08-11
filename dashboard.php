@@ -118,6 +118,21 @@ include('includes/adminnav.php');
                                 <button type="button" class="btn btn-sm btn-danger"><i class="fa fa-trash"></i> </button> 
                             </td>
                         </tr>
+                        <tr>
+                            <td></td>
+                            <td>Round Neck T-Shirt with customized A3 size printing</td>
+                            <td>C0001</td>
+                            <td>15/06/2020</td>
+                            <td>91,Kampung Baru Bangi,43000 Kajang,Selangor.</td>
+                            <td>
+                                <input type="button"  class="btn btn-sm btn-primary" value="pending" disabled>
+                            </td>
+                            <td>RM 15.00</td>
+                            <td class="text-right">
+                                <button type="button" class="btn btn-sm btn-secondary"><i class="fas fa-edit"></i></button> 
+                                <button type="button" class="btn btn-sm btn-danger"><i class="fa fa-trash"></i> </button> 
+                            </td>
+                        </tr>
                  
                     </tbody>
                 </table>
