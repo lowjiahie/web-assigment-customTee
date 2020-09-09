@@ -1,5 +1,7 @@
-
-<header style="height: 90.56px;">
+<?php 
+    session_start();
+?>
+<header style="height:90.20px;">
   <!-- Fixed navbar -->
   <nav class="navbar navbar-expand-xl navbar-custom navbar-light fixed-top">
     
@@ -48,41 +50,20 @@
             <li class="nav-item">
                 <a class="nav-link" href="cart.php"><i class="fas fa-shopping-cart"style="margin:0 5px 0 0"></i>Cart</a>
             </li>
+            
             <li class="nav-item">
-                <a class="nav-link" onclick="document.getElementById('id01').style.display='block';" href="#"> <i class="fas fa-user"style="margin:0 5px 0 0" ></i>My Account</a>
+                <a class="nav-link"  href="login.php"> <i class="fas fa-user" style="margin:0 5px 0 0" ></i>Login</a>
             </li>
-      
+             <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" onclick="document.getElementById('id01').style.display='block';" href="#"> <i class="fas fa-user" style="margin:0 5px 0 0" ></i>My Account</a>
+                            <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
+                                <a class="dropdown-item" href="ClientEditProfile.php">Edit Profile</a>
+                                   <div class="dropdown-divider"></div>
+                                   <a class="dropdown-item" href="logout.php">Logout</a>
+                            </div>
+                    </li>
       </ul>
-        <div id="id01" class="modal">
-  
-            <form class="modal-content animate" action="afterloginMainPage.php" method="post">
-              <div class="imgcontainer">
-               <img src="img/myprinting.png" alt="myprinting" class="logo" width="600px" height="130px" >
-                <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
-
-              </div>
-
-              <div class="container">
-                <label for="uname"><b>Username</b></label>
-                <input type="text" placeholder="Enter Username" name="uname" required>
-
-                <label for="psw"><b>Password</b></label>
-                <input type="password" placeholder="Enter Password" name="psw" required>
-
-                <button class="pop-btn" value="login" type="submit">Login</button>
-                <label>
-                  <input type="checkbox" checked="checked" name="remember"> Remember me
-                </label>
-              </div>
-
-              <div class="container" style="background-color:#f1f1f1">
-                <button type="button" onclick="document.getElementById('id01').style.display='none'" class="pop-btn cancelbtn">Cancel</button>
-                <span class="psw">Forgot <a href="#">password?</a></span>
-                <span class="register"><a href="register.php">Register</a></span>
-              </div>
-                
-            </form>
-        </div>
+       
     </div>
   </nav>
 </header>

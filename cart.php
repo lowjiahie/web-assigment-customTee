@@ -101,22 +101,35 @@
                     <tbody>
                         <?php
                             include('includes/config.php'); 
-                            $sql = "select * from cart where cus_id = '1'";
+                             $cusID = $_SESSION['ID'];
+                            $sql = "SELECT * FROM cart WHERE cus_id =$cusID";
                             $result = $conn ->query($sql);
                             $t1=0;
                             if($result){
-                                $cond = "true";
+                                $row = mysqli_num_rows($result); 
+                                if($row >0){
+                                    $cond ="true";
+                                }else{
+                                     $cond = "false";
+                                }    
+                               
                             }else{
                                  $cond = "false";
                             }
                             while($row=$result->fetch_assoc()):
+                                $size =  explode("|",$row['prod_size']);
+                                $color = explode("|",$row['prod_color']);
+                                $colorN = $color[1];
+                                $colorImg = $color[2];
+                                $sizeN = $size[1]
+                                
                         ?>
                             <tr> 
-                                <td><img style="width: 100px;height: 100px;" src="img/custom/<?=$row['prod_img'] ?>" /> </td>
+                                <td><img style="width: 100px;height: 100px;" src="img/custom/<?php echo $colorImg ?>" /> </td>
                                 <td><?=$row['prod_name'] ?></td>
                                 <td><?=$row['prod_method'] ?></td>
-                                <td><?=$row['prod_size'] ?></td>
-                                <td><div class="circle color1" style="background-color:<?=$row['prod_color'] ?>;"></div></td>
+                                <td><?php echo $sizeN?></td>
+                                <td><div class="circle color1" style="background-color:<?php echo $colorN?>;"></div></td>
                                 <td>
                                     <input class="form-control" type="number" id="quantity" name="quantity" min="1" max="50" value="<?=$row['prod_qty'] ?>"/>
                                     <?php $b=$row['prod_qty'];?>

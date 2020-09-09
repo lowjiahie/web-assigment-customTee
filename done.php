@@ -101,16 +101,19 @@ and open the template in the editor.
                         
                        <?php
                              require_once ('includes/config.php');
-                            $sql = "SELECT * FROM `order` WHERE ";
+                              if (isset($_GET['id'])) {
+                                  $id = $_GET['id'];
+                              }
+                            $sql = "SELECT * FROM `all_order` WHERE  order_id = $id";
                             $result = $conn ->query($sql);
                              while($row=$result->fetch_assoc()):
                         ?>                            
                              <tr>
-                                <th scope="col"><?=$row['orderID']?></th>
-                                <th scope="col"><?=$row['cusID']?></th>
-                                <th scope="col"><?=$row['payment']?></th>
-                                <th scope="col"><?=$row['status']?></th>
+                                <th scope="col"><?=$row['order_id']?></th>
+                                <th scope="col"><?=$row['cus_id']?></th>
+                                <th scope="col"><?=$row['payment_type']?></th>
                                 <th scope="col"><?=$row['total']?></th>
+                                <th scope="col"><?=$row['status']?></th>
                             </tr>
                         
                        

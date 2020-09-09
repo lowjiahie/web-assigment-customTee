@@ -71,6 +71,7 @@
                 $ProdImg = $row['Prod_Img'];
                 $status = $row['All_Status'];
             }
+           
             
             
         }
@@ -176,11 +177,11 @@
                                         <td>
                                             <span>
                                                <select id="selecter" onChange="dropdownTip(this.value)" name="size" style="margin-right:10px; margin-top:4px; margin-bottom: 7px;">
-                                                    <option selected="selected" value="XS">XS</option>    
-                                                    <option value="S">S</option>
-                                                    <option value="M">M</option>
-                                                    <option value="L">L</option>
-                                                    <option value="XL">XL</option>
+                                                    <option selected="selected" value="1|XS">XS</option>    
+                                                    <option value="2|S">S</option>
+                                                    <option value="3|M">M</option>
+                                                    <option value="4|L">L</option>
+                                                    <option value="5|XL">XL</option>
                                                </select>
                                                 
                                             </span>
@@ -195,15 +196,15 @@
                                         <td>
                                              <div class="color-choose" >
                                                 <div >
-                                                    <input data-image="red" type="checkbox" id="red" name="color" value="Black" onclick="onlyOne(this)" onChange="showColor(this.value)">
+                                                    <input data-image="red" type="checkbox" id="red" name="color" value="1|Black|black.jpg" onclick="onlyOne(this)" onChange="showColor(this.value)">
                                                   <label for="red"><span style="background-color: #323232;"></span></label>
                                                 </div>
                                                 <div>
-                                                  <input data-image="blue" type="checkbox" id="blue" name="color" value="Blue" onclick="onlyOne(this)"  onChange="showColor(this.value)">
+                                                  <input data-image="blue" type="checkbox" id="blue" name="color" value="2|Blue|blue.jpg" onclick="onlyOne(this)"  onChange="showColor(this.value)">
                                                   <label for="blue"><span style="background-color:#314780;"></span></label>
                                                 </div>
                                                 <div>
-                                                  <input data-image="black" type="checkbox" id="black" name="color" value="Red" onclick="onlyOne(this)"  onChange="showColor(this.value)">
+                                                  <input data-image="black" type="checkbox" id="black" name="color" value="3|Red|red.jpg" onclick="onlyOne(this)"  onChange="showColor(this.value)">
                                                   <label for="black"><span style="background-color: #C91524;"> </span></label>
                                                 </div>
                                              </div>
@@ -323,15 +324,15 @@
     }
        function dropdownTip(value){
         
-        if(value === "XS"){
+        if(value === "1|XS"){
             value ="XS";
-        }else if(value ==="S"){
+        }else if(value ==="2|S"){
             value = "S";
-        }else if (value ==="M"){
+        }else if (value ==="3|M"){
             value = "M";
-        }else if(value ==="L"){
+        }else if(value ==="4|L"){
             value ="L";
-        }else if(value ==="XL"){
+        }else if(value ==="5|XL"){
             value = "XL";
         }else{
             value="";
@@ -342,11 +343,11 @@
     }
        function showColor(value){
           
-            if(value === "Black"){
+            if(value === "1|Black|black.jpg"){
                 value ="Black";
-            }else if(value ==="Blue"){
+            }else if(value ==="2|Blue|blue.jpg"){
                 value = "Blue";
-            }else if (value ==="Red"){
+            }else if (value ==="3|Red|red.jpg"){
                 value = "Red";
             }else{
                 value="";

@@ -1,3 +1,6 @@
+<?php
+    session_start();
+?>
 <!doctype html>
 <html lang="en" class="h-100">
   <head>
@@ -42,8 +45,8 @@
     <?php
         include('includes/clientnav.php'); 
         require_once ('includes/config.php');
-        
-          $sql = "select * from customer where ID = '1'";
+            $cus_id = $_SESSION['ID'];
+          $sql = "select * from customer where ID =$cus_id ";
           $result = $conn ->query($sql);
           $t1=0;
 
@@ -169,19 +172,23 @@
                             <table class="table ">
                                 <thead>
                                    <?php
-                                        
-                                        $sql = "select * from cart where cus_id = '1'";
+                                        $cus_id = $_SESSION['ID'];
+                                        $sql = "select * from cart where cus_id = $cus_id";
                                         $result = $conn ->query($sql);
                                         $t1=0;
                                     
                                         while($row=$result->fetch_assoc()):
-                                    ?>
+                                            $size = explode("|", $row['prod_size']);
+                                            $sizeName = $size[1];
+                                            $color =  explode("|", $row['prod_color']);
+                                            $colorName = $color[1];
+                                        ?>
                                         <tr> 
                                             <td><img style="width: 100px;height: 100px;" src="img/custom/<?=$row['prod_img'] ?>" /> </td>
-                                            <td><?=$row['prod_name'] ?></td>
+                                            <td><?=$row['prod_name']?></td>
                                             <td><?=$row['prod_method'] ?></td>
-                                            <td><?=$row['prod_size'] ?></td>
-                                            <td><div class="circle color1" style="background-color:<?=$row['prod_color'] ?>;"></div></td>
+                                            <td><?php echo $sizeName;?></td>
+                                            <td><div class="circle color1" style="background-color:<?php echo $colorName;?>;"></div></td>
                                             <td>
                                                 <input class="form-control" type="number" id="quantity" name="quantity" min="1" max="50" value="<?=$row['prod_qty'] ?>"/>
                                                 <?php $b=$row['prod_qty'];?>
@@ -233,12 +240,14 @@
                                         <div class="col-sm-12 col-md-3 text-right">
                                             <input id="product_id" name="cus_id" value="<?php echo $cusID?>" type="hidden">
                                              
-                                                 <input type="hidden" name="total" class="form-control form-control-sm" id="total" value="<?php echo $t2?>" >
-                                                
-                                                  <input class="form-check-input" type="hidden" name="payment" id="payment2" value="CashOnDelivery" >
-                                                  <input class="form-check-input" type="hidden" name="payment" id="payment2" value="TngNGo">
-                                                  <input class="form-check-input" type="hidden" name="payment" id="payment1" value="CardPayment">
-                                                  <input class="btn btn-success" type="submit" name="checkout" value="Place Order Now">
+                                             <input type="hidden" name="subtotal" class="form-control form-control-sm" id="subtotal" value="<?php echo $t1?>" >
+                                          
+                                             <input type="hidden" name="total" class="form-control form-control-sm" id="total" value="<?php echo $t2?>" >
+                                              
+                                              <input class="form-check-input" type="hidden" name="payment" id="payment2" value="CashOnDelivery" >
+                                              <input class="form-check-input" type="hidden" name="payment" id="payment2" value="TngNGo">
+                                              <input class="form-check-input" type="hidden" name="payment" id="payment1" value="CardPayment">
+                                              <input class="btn btn-success" type="submit" name="checkout" value="Place Order Now">
                                         </div>
                                     </form>
                                 </div>

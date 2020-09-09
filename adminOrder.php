@@ -52,35 +52,30 @@ and open the template in the editor.
                         <tr>
                             <th scope="col">Order ID</th>
                             <th scope="col">Customer ID</th>
-                            <th scope="col">Item Name</th>
-                            <th scope="col">Date</th>
-                            <th scope="col" >Address</th>
-                            <th scope="col" >Status
-                            <th scope="col" >Total(RM)
+                            <th scope="col">Payment Type</th>
+                            <th scope="col">Total(RM)</th>
+                            <th scope="col" >Status</th>
                             <th scope="col" >Action</th>
                             
                         </tr>
                     </thead>
                     <tbody>
-                        
-                       <?php
-            $conn = new mysqli('localhost','root','','assignment');
-            $sql = "select * from adminorder";
-            $result = $conn ->query($sql);
-            while($row=$result->fetch_assoc()){
-                echo "<tr><td>{$row['orderID']}</td><td>{$row['CustomerID']}</td><td>{$row['ItemName']}</td><td>{$row['Date']}</td><td>{$row['Address']}</td><td>{$row['Status']}</td><td>{$row['Total']}
-                </td><td class='text-right'><button type='button' class='btn btn-sm btn-danger'><i class='fa fa-trash'></i> </button> 
-                </td><td class='text-right'><button type='button' class='btn btn-sm btn-secondary'><i class='fas fa-edit'></i></button></td></tr>";
-                                 
+                            <?php
+                                include('includes/config.php'); 
+                                $sql = "SELECT * FROM  all_order";
+                                $result = $conn ->query($sql);
 
-                }
+                                while($row=$result->fetch_assoc()):
+                            ?>
+                            <td>Order ID</td>
+                            <td>Customer ID</td>
+                            <td>Payment Type</td>
+                            <td>Total(RM)</td>
+                            <td >Status</td>
+                            <td>Action</td>
             
-            $conn->close();
-            ?>                            
-
             
-            
-                       
+                       <?php endwhile;?>
                         
                     </tbody>
                 </table>
