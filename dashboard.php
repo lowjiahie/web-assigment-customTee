@@ -27,6 +27,15 @@
 
 include('includes/sidebar.php'); 
 include('includes/adminnav.php'); 
+
+    include('includes/config.php'); 
+    $sql = "SELECT COUNT(status) AS NumberOfPending FROM  all_order WHERE status = 'Pending'";
+    $result = $conn ->query($sql);
+
+    $result = $conn ->query($sql);
+    $row = mysqli_fetch_array($result);
+     $count = $row['NumberOfPending'];
+                      
 ?>
  
  <div class="container ">
@@ -48,7 +57,7 @@ include('includes/adminnav.php');
        <div class="card text-white bg-primary mb-3" style="max-width: 18rem;">
         <div class="card-body">
           <h5 class="card-title text-white h6 text-lg-center">ORDER PENDING</h5>
-          <h3 class="card-title text-white h3 text-lg-center">1</h3>
+          <h3 class="card-title text-white h3 text-lg-center"><?= $count?></h3>
           
         </div>
       </div>
@@ -82,58 +91,46 @@ include('includes/adminnav.php');
     <div class="container mb-2">
        <h4 class="h4 mb-4">Recent Order</h4>
        <div class="text-right">
-       <a href="#" type="button" class="btn btn-sm btn-primary mb-3 ">View All</a>
+       <a href="adminOrder.php" type="button" class="btn btn-sm btn-primary mb-3 ">View All</a>
        </div>
     <div class="row">
         <div class="col-12">
             <div class="table-responsive">
-                <table class="table table-striped">
+                 <table class="table table-striped">
                     <thead>
                         <tr>
                             <th scope="col">Order ID</th>
-                            <th scope="col">Item</th>
-                            <th scope="col">Order by</th>
-                            <th scope="col">Date</th>
-                            <th scope="col">Address</th>
-                            <th scope="col">Status</th>
-                            <th scope="col">Total</th>
-                            <th scope="col">Action</th>
-                       
+                            <th scope="col">Customer ID</th>
+                            <th scope="col">Payment Type</th>
+                            <th scope="col">Total(RM)</th>
+                            <th scope="col" >Status</th>
+                            <th scope="col"class="text-center" >Action</th>
+                            
                         </tr>
                     </thead>
                     <tbody>
                         
+                            <?php
+                                include('includes/config.php'); 
+                                $sql = "SELECT * FROM  all_order WHERE status = 'Pending'";
+                                $result = $conn ->query($sql);
+
+                                while($row=$result->fetch_assoc()):
+                            ?>
                         <tr>
-                            <td>1001</td>
-                            <td>Round Neck T-Shirt with customized A3 size printing</td>
-                            <td>C0001</td>
-                            <td>15/06/2020</td>
-                            <td>91,Kampung Baru Bangi,43000 Kajang,Selangor.</td>
-                            <td>
-                                <input type="button"  class="btn btn-sm btn-primary" value="pending" disabled>
+                            <td><?=$row['order_id']?></td>
+                            <td><?=$row['cus_id']?></td>
+                            <td><?=$row['payment_type']?></td>
+                            <td><?=$row['total']?></td>
+                            <td><input type="button"  class="btn btn-sm btn-primary"value="<?= $row['status']?>" disabled></td>
+                            <td class="text-center">
+                                <a href="adminEditProduct.php?edit=<?php echo$row['order_id'];?>" type="button" class="btn btn-sm btn-secondary"><i class="fas fa-edit"></i></a> 
+                                <a href="adminProductVariations.php?view=<?php echo$row['order_id'];?>" type="button" class="btn btn-sm btn-info"><i class="fas fa-eye"></i> </a> 
                             </td>
-                            <td>RM 15.00</td>
-                            <td class="text-right">
-                                <button type="button" class="btn btn-sm btn-secondary"><i class="fas fa-edit"></i></button> 
-                                <button type="button" class="btn btn-sm btn-danger"><i class="fa fa-trash"></i> </button> 
-                            </td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td>Round Neck T-Shirt with customized A3 size printing</td>
-                            <td>C0001</td>
-                            <td>15/06/2020</td>
-                            <td>91,Kampung Baru Bangi,43000 Kajang,Selangor.</td>
-                            <td>
-                                <input type="button"  class="btn btn-sm btn-primary" value="pending" disabled>
-                            </td>
-                            <td>RM 15.00</td>
-                            <td class="text-right">
-                                <button type="button" class="btn btn-sm btn-secondary"><i class="fas fa-edit"></i></button> 
-                                <button type="button" class="btn btn-sm btn-danger"><i class="fa fa-trash"></i> </button> 
-                            </td>
-                        </tr>
-                 
+                            </tr>
+            
+                       <?php endwhile;?>
+                        
                     </tbody>
                 </table>
             </div>

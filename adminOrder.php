@@ -55,11 +55,12 @@ and open the template in the editor.
                             <th scope="col">Payment Type</th>
                             <th scope="col">Total(RM)</th>
                             <th scope="col" >Status</th>
-                            <th scope="col" >Action</th>
+                            <th scope="col"class="text-center" >Action</th>
                             
                         </tr>
                     </thead>
                     <tbody>
+                        
                             <?php
                                 include('includes/config.php'); 
                                 $sql = "SELECT * FROM  all_order";
@@ -67,13 +68,17 @@ and open the template in the editor.
 
                                 while($row=$result->fetch_assoc()):
                             ?>
-                            <td>Order ID</td>
-                            <td>Customer ID</td>
-                            <td>Payment Type</td>
-                            <td>Total(RM)</td>
-                            <td >Status</td>
-                            <td>Action</td>
-            
+                        <tr>
+                            <td><?=$row['order_id']?></td>
+                            <td><?=$row['cus_id']?></td>
+                            <td><?=$row['payment_type']?></td>
+                            <td><?=$row['total']?></td>
+                            <td><input type="button"  class="btn btn-sm btn-primary"value="<?= $row['status']?>" disabled></td>
+                            <td class="text-center">
+                                <a href="adminEditProduct.php?edit=<?php echo$row['order_id'];?>" type="button" class="btn btn-sm btn-secondary"><i class="fas fa-edit"></i></a> 
+                                <a href="adminProductVariations.php?view=<?php echo$row['order_id'];?>" type="button" class="btn btn-sm btn-info"><i class="fas fa-eye"></i> </a> 
+                            </td>
+                            </tr>
             
                        <?php endwhile;?>
                         
