@@ -17,3 +17,12 @@ function show3(){
 function show4(){
   document.getElementById('div2').style.display = 'block';
 }
+
+//for client login
+function show5(){
+    document.getElementById('id01').style.display = 'block';
+}
+
+function show6(){
+    document.getElementById('').style.display = 'block';
+}

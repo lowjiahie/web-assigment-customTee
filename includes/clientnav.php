@@ -17,23 +17,10 @@
          <li class="nav-item">
              <a class="nav-link" href="mainpage.php">HOME</a>
         </li>
-        <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">ALL PRODUCT</a>
-            <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
-                <a class="dropdown-item" href="t-shirt.php">T-SHIRTS</a>
-                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="">SWEATER</a>
-                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#">UNIFORM</a>
-                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="#">SPORT-TEE</a>
-                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="custom-tee.php">CUSTOM-TEE</a>
-            </div>
+         <li class="nav-item">
+             <a class="nav-link"  href="custom-tee.php">CUSTOM-TEE</a>
         </li>
-        <li class="nav-item ">
-          <a class="nav-link" href="#">ABOUT US</a>
-        </li>
+        
         <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">SERVICE</a>
         <div class="dropdown-menu dropdown-primary" aria-labelledby="navbarDropdownMenuLink">

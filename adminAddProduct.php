@@ -27,6 +27,12 @@
 
 include('includes/sidebar.php'); 
 include('includes/adminnav.php'); 
+
+require_once ('includes/config.php');
+$sql = "SELECT COUNT(ProductID) AS NumberOfProducts FROM customtee";
+$result = $conn ->query($sql);
+$row = mysqli_fetch_array($result);
+$count = $row['NumberOfProducts']+1;
 ?>
  <div class="container ">
      <h4 class="h4">Add Product</h4>
@@ -41,10 +47,9 @@ include('includes/adminnav.php');
             </nav>
         </div>
         
+    </div> 
     </div>
-     
-    </div>
-<form class=" container form-horizontal bg-info">
+<form class=" container form-horizontal bg-info" method="POST" action="admin_php_code.php" enctype="multipart/form-data">
 <fieldset>
 
 <!-- Form Name -->
@@ -52,40 +57,54 @@ include('includes/adminnav.php');
 
 <!-- Text input-->
 <div class="form-group">
-  <label class="col-md-4 control-label" for="product_id">PRODUCT ID</label>  
+  <label class="col-md-4 control-label" for="product_id"><b>PRODUCT ID</b></label>  
   <div class="col-md-4">
-  <input id="product_id" name="product_id" placeholder="PRODUCT ID" class="form-control input-md" required="" type="text">
+      <input id="product_id" name="product_id" value="<?php echo $count?>" placeholder="PRODUCT ID" class="form-control input-md" type="text" disabled>
+      <input id="product_id" name="product_id" value="<?php echo $count?>  class="form-control input-md" type="hidden">
     
   </div>
 </div>
 
 <!-- Text input-->
 <div class="form-group">
-  <label class="col-md-4 control-label" for="product_name">PRODUCT NAME</label>  
+  <label class="col-md-4 control-label" for="product_name"><b>PRODUCT NAME</b></label>  
   <div class="col-md-4">
   <input id="product_name" name="product_name" placeholder="PRODUCT NAME" class="form-control input-md" required="" type="text">
     
   </div>
 </div>
 
-
-
-<!-- Select Basic -->
+<!-- Text input-->
 <div class="form-group">
-  <label class="col-md-4 control-label" for="product_categorie">PRODUCT CATEGORY</label>
+  <label class="col-md-4 control-label" for="product_price"><b>PRODUCT PRICE</b></label>  
   <div class="col-md-4">
-    <select id="product_categorie" name="product_categorie" class="form-control">
-         <option value="T-Shirt">T-Shirt</option>
-         <option value="Sweater">Sweater</option>
-         <option value="Uniform">Uniform</option>
-         <option value="Sport-Tee">Sport-Tee</option>
-         <option value="Custom-Tee">Custom-Tee</option>
-    </select>
+  <input id="product_price" name="product_price" placeholder="PRODUCT PRICE" class="form-control input-md" required="" type="text">
+    
   </div>
 </div>
+
+
+
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="product_weight"><b>PRODUCT WEIGHT</b></label>  
+  <div class="col-md-4">
+  <input id="product_weight" name="product_weight" placeholder="PRODUCT WEIGHT" class="form-control input-md" required="" type="text">
+    
+  </div>
+</div>
+<!-- Text input-->
+<div class="form-group">
+  <label class="col-md-4 control-label" for="product_material"><b>PRODUCT MATERIAL</b></label>  
+  <div class="col-md-4">
+  <input id="product_material" name="product_material" placeholder="PRODUCT MATERIAL" class="form-control input-md" required="" type="text">
+    
+  </div>
+</div>
+
 <!-- Select Basic -->
 <div class="form-group">
-  <label class="col-md-4 control-label" for="product_status">PRODUCT STATUS</label>
+  <label class="col-md-4 control-label" for="product_status"><b>PRODUCT STATUS</b></label>
   <div class="col-md-4">
     <select id="product_status" name="product_status" class="form-control">
         <option value="Active">Active</option>
@@ -95,105 +114,19 @@ include('includes/adminnav.php');
   </div>
 </div>
 
-<!-- Text input-->
-<div class="form-group">
-  <label class="col-md-4 control-label" for="available_quantity">AVAILABLE QUANTITY</label>  
-  <div class="col-md-4">
-      <input id="available_quantity" name="available_quantity"  value="1" class="form-control input-md"  type="number" min="1" max="50">
-    
-  </div>
-</div>
-
-<!-- Text input-->
-<div class="form-group">
-  <label class="col-md-4 control-label" for="product_weight">PRODUCT WEIGHT</label>  
-  <div class="col-md-4">
-  <input id="product_weight" name="product_weight" placeholder="PRODUCT WEIGHT" class="form-control input-md" required="" type="text">
-    
-  </div>
-</div>
-<!-- Text input-->
-<div class="form-group">
-  <label class="col-md-4 control-label" for="product_material">PRODUCT MATERIAL</label>  
-  <div class="col-md-4">
-  <input id="product_material" name="product_material" placeholder="PRODUCT MATERIAL" class="form-control input-md" required="" type="text">
-    
-  </div>
-</div>
-
-<div class="form-group">
-    <label class="col-md-4 control-label" for="product_material">PRODUCT SIZE</label> 
-    <div class="col-md-4">
-    <div class="form-check form-check-inline">
-      <input class="form-check-input" type="checkbox" id="sizeCheckbox1" value="option1">
-      <label class="form-check-label" for="sizeCheckbox1">XS</label>
-    </div>
-    <div class="form-check form-check-inline">
-      <input class="form-check-input" type="checkbox" id="sizeCheckbox2" value="option2">
-      <label class="form-check-label" for="sizeCheckbox2">S</label>
-    </div>
-    <div class="form-check form-check-inline">
-      <input class="form-check-input" type="checkbox" id="sizeCheckbox3" value="option3">
-      <label class="form-check-label" for="sizeCheckbox3">M</label>
-    </div>
-    <div class="form-check form-check-inline">
-      <input class="form-check-input" type="checkbox" id="sizeCheckbox4" value="option4">
-      <label class="form-check-label" for="sizeCheckbox4">L</label>
-    </div>
-    <div class="form-check form-check-inline">
-      <input class="form-check-input" type="checkbox" id="sizeCheckbox5" value="option5">
-      <label class="form-check-label" for="sizeCheckbox5">XL</label>
-    </div>
-    <div class="form-check form-check-inline">
-      <input class="form-check-input" type="checkbox" id="sizeCheckbox6" value="option6">
-      <label class="form-check-label" for="sizeCheckbox6">2XL</label>
-    </div>
-    <div class="form-check form-check-inline">
-      <input class="form-check-input" type="checkbox" id="sizeCheckbox7" value="option7">
-      <label class="form-check-label" for="sizeCheckbox7">3XL</label>
-    </div>
-    </div>
-</div>
-
-<div class="form-group">
-    <label class="col-md-4 control-label" for="product_material">PRODUCT COLOR</label> 
-    <div class="col-md-4">
-    <div class="form-check form-check-inline">
-      <input class="form-check-input" type="checkbox" id="colorCheckbox1" value="option1">
-      <label class="form-check-label" for="colorCheckbox1">Red</label>
-    </div>
-    <div class="form-check form-check-inline">
-      <input class="form-check-input" type="checkbox" id="colorCheckbox2" value="option2">
-      <label class="form-check-label" for="colorCheckbox2">Blue</label>
-    </div>
-    <div class="form-check form-check-inline">
-      <input class="form-check-input" type="checkbox" id="colorCheckbox3" value="option3">
-      <label class="form-check-label" for="colorCheckbox3">Black</label>
-    </div>
-   
-    </div>
-</div>
-
  <!-- File Button --> 
 <div class="form-group">
-  <label class="col-md-4 control-label" for="filebutton">main_image</label>
+  <label class="col-md-4 control-label" for="img"><b>Product_image_variations</b></label>
   <div class="col-md-4">
-    <input id="filebutton" name="filebutton" class="input-file" type="file">
-  </div>
-</div>
-<!-- File Button --> 
-<div class="form-group">
-  <label class="col-md-4 control-label" for="filebutton">More_images</label>
-  <div class="col-md-4">
-    <input id="filebutton" name="filebutton" class="input-file" type="file">
+    <input id="img" name="img" class="input-file" type="file">
   </div>
 </div>
 
 <!-- Button -->
 <div class="form-group">
-  <label class="col-md-4 control-label" for="singlebutton"></label>
+  <label class="col-md-4 control-label" for="add"></label>
   <div class="col-md-4">
-    <button id="singlebutton" name="singlebutton" class="btn btn-primary">Add</button>
+    <button id="add" name="add" class="btn btn-primary">Add</button>
   </div>
   </div>
 

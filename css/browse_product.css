@@ -137,16 +137,7 @@ and open the template in the editor.
   box-shadow: 0 0 0 2px #CCC;
 }
  
-.color-choose input[type="checkbox"]#red + label span {
-  background-color: #C91524;
-}
-.color-choose input[type="checkbox"]#blue + label span {
-  background-color: #314780;
-}
-.color-choose input[type="checkbox"]#black + label span {
-  background-color: #323232;
-}
- 
+
 .color-choose input[type="checkbox"]:checked + label span {
  
   border:2px solid #000; 

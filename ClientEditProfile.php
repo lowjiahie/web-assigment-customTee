@@ -79,11 +79,47 @@ and open the template in the editor.
     
     
     </head>
-<?php
-    include('afterLoginClientNav.php'); 
-?>
+
     
     <body>
+        
+        <?php
+    include  ('includes/config.php');
+    include ('afterLoginClientNav.php');
+    
+    $sql = "select * from  ceditprofile ";
+    $result = $conn->query($sql);
+    $row = $result->fetch_assoc();
+    
+    if(isset($_POST['save'])){
+        
+    
+    
+            if($_SERVER['REQUEST_METHOD'] == 'POST'){
+                $fname = $_POST['fname'];
+                $email = $_POST['email'];
+                $username = $_POST['uname'];
+                $password = $_POST['password'];
+                $confirmpass = $_POST['cpass'];
+
+                $sql = "update ceditprofile set fname='{$fname}',email='{$email}',uname='{$username}',password='{$password}',cpass='{$confirmpass}'";
+
+
+                if ($conn->query($sql) === TRUE) {
+                    echo "<br>";
+                    echo "<br>";
+                    echo "Record updated successfully";
+                    } else {
+                    echo "Error updating record " . $conn->error;
+                    }
+
+
+            }
+    }
+    $conn->close();
+     
+    ?>
+        
         
 <div class="container">
     <h1>Edit Profile</h1>
@@ -94,11 +130,11 @@ and open the template in the editor.
         
         <h3>Personal info</h3>
         
-        <form class="form-horizontal" role="form">
+        <form class="form-horizontal" role="form"  action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
           <div class="form-group">
             <label class="col-lg-3 control-label">Full Name:</label>
             <div class="col-lg-8">
-              <input class="form-control" type="text" value="Puah Hsien Jian">
+                <input class="form-control" type="text" value="" name="fname">
             </div>
           </div>
           
@@ -106,32 +142,32 @@ and open the template in the editor.
           <div class="form-group">
             <label class="col-lg-3 control-label">Email:</label>
             <div class="col-lg-8">
-              <input class="form-control" type="text" value="hsienjian@live.com">
+                <input class="form-control" type="text" value="" name="email">
             </div>
           </div>
           
           <div class="form-group">
             <label class="col-md-3 control-label">Username:</label>
             <div class="col-md-8">
-              <input class="form-control" type="text" value="hsienjian">
+                <input class="form-control" type="text" value="hsienjian" name="uname">
             </div>
           </div>
           <div class="form-group">
             <label class="col-md-3 control-label">Password:</label>
             <div class="col-md-8">
-              <input class="form-control" type="password" value="11111122333">
+                <input class="form-control" type="password" value="" name="password">
             </div>
           </div>
           <div class="form-group">
             <label class="col-md-3 control-label">Confirm password:</label>
             <div class="col-md-8">
-              <input class="form-control" type="password" value="11111122333">
+                <input class="form-control" type="password" value="" name="cpass">
             </div>
           </div>
           <div class="form-group">
             <label class="col-md-3 control-label"></label>
             <div class="col-md-8">
-              <input type="button" class="btn btn-primary" value="Save Changes">
+                <input type="submit" class="btn btn-primary" value="Save Changes" name="save">
               <span></span>
               <input type="reset" class="btn btn-default" value="Cancel">
             </div>

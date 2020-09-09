@@ -47,7 +47,7 @@ include('includes/adminnav.php');
     <div class="col col-lg-3">
        <div class="card text-white bg-primary mb-3" style="max-width: 18rem;">
         <div class="card-body">
-          <h5 class="card-title text-white h5 text-lg-center">ORDER PENDING</h5>
+          <h5 class="card-title text-white h6 text-lg-center">ORDER PENDING</h5>
           <h3 class="card-title text-white h3 text-lg-center">1</h3>
           
         </div>
@@ -56,7 +56,7 @@ include('includes/adminnav.php');
      <div class="col col-lg-3">
        <div class="card text-white bg-danger mb-3" style="max-width: 18rem;">
         <div class="card-body">
-          <h5 class="card-title text-white h5 text-lg-center">ORDER CANCEL</h5>
+          <h5 class="card-title text-white h6 text-lg-center">ORDER CANCEL</h5>
           <h3 class="card-title text-white h3 text-lg-center">0</h3>
         </div>
       </div>
@@ -64,7 +64,7 @@ include('includes/adminnav.php');
     <div class="col-md-3">
       <div class="card text-white bg-info mb-3" style="max-width: 18rem;">
         <div class="card-body">
-          <h5 class="card-title text-white h5 text-lg-center">ORDER COMPLETE</h5>
+          <h5 class="card-title text-white h6 text-lg-center">ORDER COMPLETE</h5>
           <h3 class="card-title text-white h3 text-lg-center">1</h3>
         </div>
       </div>
@@ -72,8 +72,8 @@ include('includes/adminnav.php');
     <div class="col col-lg-3">
        <div class="card text-white bg-success mb-3" style="max-width: 18rem;">
         <div class="card-body">
-         <h5 class="card-title text-white h5 text-lg-center">TODAY INCOME</h5>
-          <h3 class="card-title text-white h3 text-lg-center">RM50.00</h3>
+         <h5 class="card-title text-white h6 text-lg-center">Shipping</h5>
+          <h3 class="card-title text-white h3 text-lg-center">1</h3>
         </div>
       </div>
     </div>

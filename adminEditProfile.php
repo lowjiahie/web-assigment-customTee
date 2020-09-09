@@ -27,6 +27,40 @@ and open the template in the editor.
 
     include('includes/sidebar.php'); 
     include('includes/adminnav.php'); 
+    
+    ?>
+    
+    <?php
+    $conn = new mysqli('localhost','root','','assignment');
+    if ($conn->connect_error)
+        die('connection failed '.$conn->error);
+    
+    $sql = "select * from admin ";
+    $result = $conn->query($sql);
+    $row = $result->fetch_assoc();
+    
+    if(isset($_POST['save'])){
+        
+    
+    
+            if($_SERVER['REQUEST_METHOD'] == 'POST'){
+                $username = $_POST['username'];
+                $password_1 = $_POST['password_1'];
+
+                $sql = "update admin set username='{$username}',password_1='{$password_1}' ";
+
+
+                if ($conn->query($sql) === TRUE) {
+                    echo "Record updated successfully";
+                    } else {
+                    echo "Error updating record " . $conn->error;
+                    }
+
+
+            }
+    }
+    $conn->close();
+     
     ?>
     
     
@@ -39,31 +73,31 @@ and open the template in the editor.
 
                 <h3>Personal info</h3>
 
-                <form class="form-horizontal" role="form">
+                <form class="form-horizontal" role="form" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
                   
 
                   <div class="form-group">
                     <label class="col-md-3 control-label">Username:</label>
                     <div class="col-md-8">
-                      <input class="form-control" type="text" value="admin">
+                        <input class="form-control" type="text" value="admin" name="username" >
                     </div>
                   </div>
                   <div class="form-group">
                     <label class="col-md-3 control-label">Password:</label>
                     <div class="col-md-8">
-                      <input class="form-control" type="password" value="admin123">
+                        <input class="form-control" type="password" value="" name="password_1">
                     </div>
                   </div>
                   <div class="form-group">
                     <label class="col-md-3 control-label">Confirm password:</label>
                     <div class="col-md-8">
-                      <input class="form-control" type="password" value="admin123">
+                        <input class="form-control" type="password" value="" name="cpassword">
                     </div>
                   </div>
                   <div class="form-group">
                     <label class="col-md-3 control-label"></label>
                     <div class="col-md-8">
-                      <input type="button" class="btn btn-primary" value="Save Changes">
+                        <input type="submit" class="btn btn-primary" value="Save Changes" name="save">
                       <span></span>
                       <input type="reset" class="btn btn-default" value="Cancel">
                     </div>

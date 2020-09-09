@@ -110,70 +110,36 @@
 </div>
  
     
-<div class="background-brand">
-    <div class="header-custom">
-        <h1>Shop By Brand</h1>
-    </div>
-    
-    <div class="row" style="padding-left:30px;padding-top: 5px;justify-content: center;margin: auto;">
-              <div class="column" style="padding-left:50px; padding-bottom: 20px;">
-                  <a href="#" style="stylesheet"><img src="img/freelife.jpg" alt="freelife"></a>
-              </div>
-              <div class="column" style="padding-left:50px; padding-bottom: 20px;">
-                  <a href="#" style="stylesheet"><img src="img/Comfort_Colors.jpg" alt="Comfort_Colors"></a>
-              </div>
-              <div class="column" style="padding-left:50px; padding-bottom: 20px;">
-                  <a href="#" style="stylesheet"><img src="img/Rightway.jpg" alt="Rightway"></a>
-              </div>
-                <div class="column" style="padding-left:50px; padding-bottom: 20px;">
-                    <a href="#" style="stylesheet"><img src="img/oren.png" alt="oren"></a>
-              </div>
-        </div>
-
-        <div class="row" style="padding-left:30px;padding-top: 5px;justify-content: center;margin: auto;">
-              <div class="column" style="padding-left:50px; padding-bottom: 20px;">
-                  <a href="#" style="stylesheet"><img src="img/Body-Glove.jpg" alt="body glove"></a>
-              </div>
-              <div class="column" style="padding-left:50px; padding-bottom: 20px;">
-                  <a href="#" style="stylesheet"><img src="img/gildan.png" alt="Gildan"></a>
-              </div>
-              <div class="column" style="padding-left:50px; padding-bottom: 20px;">
-                  <a href="#" style="stylesheet"><img src="img/Apparel.jpg" alt="Apparel"></a>
-              </div>
-              <div class="column" style="padding-left:50px; padding-bottom: 20px;">
-                    <a href="#" style="stylesheet"><img src="img/palomo.png" alt="palomo"></a>
-              </div>
-        </div>
-</div>
-    
 <div class="background">
 <div class="header-custom">
     <h1>Best Selling</h1>
 </div>
 <div class="row justify-content-md-center" style="margin-right:15px;" >
     <div class="col col-lg-2 " >
-          <a href="#" style="stylesheet"><img src="img/bomber.jpg" alt="shirt"></a>
-          <span class="row">Bomber Jacket</span>
-          <span class="row">RM 49.99</span>
+        <a href="browse_product.php" style="stylesheet"><img src="img/custom/Round-Neck-T-Shirt-with-customized-A3-size-printing-400x400.jpg" height="250px;" width="250px;"></a>
+          <span class="row">Round Neck T-Shirt with customized A3 size printing</span>
+          <span class="row">RM 15.00</span>
           
       </div>
       <div class="col col-lg-2" style="padding-left:50px; padding-bottom: 20px;">
-          <a href="#" style="stylesheet"><img src="img/f1-uniform.jpg" alt="shirt"></a>
-          <span class="row">F1 Uniform</span>
-          <span class="row">RM 89.99</span>
+          <a href="browse_product.php" style="stylesheet"><img src="img/custom/52ECBE2E-7524-40F9-8032-589F5E16B653-400x400.jpeg" alt="shirt" height="250px;" width="250px;"></a>
+          <span class="row">Round Neck T-Shirt with customized front A3 and back A4 size printing</span>
+          <span class="row">RM 35.00</span>
       </div>
       <div class="col col-lg-2" style="padding-left:50px; padding-bottom: 20px;">
-          <a href="#" style="stylesheet"><img src="img/best_selling3.png" alt="shirt"></a>
-          <span class="row">Round Neck T-Shirt</span>
-          <span class="row">RM 19.99</span>
+          <a href="browse_product.php" style="stylesheet"><img src="img/custom/Round-Neck-T-Shirt-with-customized-front-A4-and-back-A3-size-printing-400x400.jpg" alt="shirt" height="250px;" width="250px;"></a>
+          <span class="row">Round Neck T-Shirt with customized front A4 and back A3 size printing</span>
+          <span class="row">RM 35.00</span>
       </div>
         <div class="col col-lg-2" style="padding-left:50px; padding-bottom: 20px;">
-            <a href="#" style="stylesheet"><img src="img/best_selling4.png" alt="hoodie"></a>
-            <span class="row">Sweater Hoodie</span>
-            <span class="row">RM 69.99</span>
+            <a href="browse_product.php" style="stylesheet"><img src="img/custom/Round-Neck-T-Shirt-with-customized-front-logo-and-back-A4-size-printing-400x400.jpg" alt="hoodie" height="250px;" width="250px;"></a>
+            <span class="row">Round Neck T-Shirt with customized front and back logo printing</span>
+            <span class="row">RM 30.00</span>
     </div>
   </div>
 </div>
+    
+
 
 
 <div class="header-services">

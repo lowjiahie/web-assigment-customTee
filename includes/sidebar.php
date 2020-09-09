@@ -24,21 +24,13 @@
                     </ul>
                 </li>
                 <li>
-                    <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Category</a>
-                    <ul class="collapse list-unstyled" id="pageSubmenu">
-                        <li>
-                            <a href="admincategory.php">All category</a>
-                        </li>
-                        <li>
-                            <a href="adminAddCategory.php">Add category</a>
-                        </li>
-                    </ul>
-                </li>
-                <li>
                     <a href="adminCustomer.php">Customer</a>
                 </li>
                 <li>
                     <a href="adminOrder.php">Order</a>
+                </li>
+                <li>
+                    <a href="adminFeedBack.php">Feedback</a>
                 </li>
             </ul>
         </nav>

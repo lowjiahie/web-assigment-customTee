@@ -1,4 +1,4 @@
-
+=
 <!doctype html>
 <html lang="en" class="h-100">
   <head>
@@ -46,6 +46,32 @@
     
 <body>
     
+    <?php
+  include ("includes/config.php");
+                
+        
+
+        if(isset($_POST['submit'])){
+            $firstname = ($_POST['firstname']);
+            $email =($_POST['email']);
+            $phonenumber = ($_POST['phonenumber']);
+            $feedback = ($_POST['feedback']);
+            
+            $sql= "insert into feedback values('{}','{$firstname}','{$email}','{$phonenumber}','{$feedback}')";
+            $result = $conn->query($sql);
+            
+            if($result){
+                $msg = "Your feedback is successful ";
+            }else{
+                echo $conn->error;
+            }
+            
+        }
+        ?>
+    
+    
+    
+    
     
     <div class="slideshow" >
         <img src="img/contact-us.jpg" alt="CS" style="width:100%;">
@@ -54,21 +80,21 @@
     <h1>Feedback Form</h1>
 
     <div class="container" style="border-radius:5px;background-color: whitesmoke;">
-        <form name="myform" action="done.php" onsubmit="return validateForm()" method="post">
+        <form name="myform" action="<?php echo $_SERVER['PHP_SELF']; ?>" onsubmit="return validateForm()" method="post">
 
         <label for="fname">First Name</label>
         <input type="text" id="fname" name="firstname" placeholder="Your name..">
 
-        <label for="lname">Last Name</label>
-        <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+        <label for="lname">Email</label>
+        <input type="text" id="lname" name="email" placeholder="example@gmail.com">
 
-        <label for="country">Phone Number</label>
-        <input type="text" id="phone number" name="lastname" placeholder="Enter Your Phone Number">
+        <label for="phoneN">Phone Number</label>
+        <input type="text" id="phoneN" name="phonenumber" placeholder="0193218340">
 
         <label for="feedback">Feedback</label>
-        <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
+        <textarea id="subject" name="feedback" placeholder="Write something.." style="height:200px"></textarea>
 
-        <input type="submit" value="Submit">
+        <input type="submit" value="Submit" name="submit">
 
       </form>
     </div>

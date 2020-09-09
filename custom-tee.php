@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="en" class="h-100">
   <head>
@@ -104,150 +105,37 @@
         <div class="title-head"><h6>Custom-tee (Unisex)</h6></div>
         <div class="line"></div>
     </div>
-    
-    <form method="POST" action="browse_product.php">
-     <div class="container">
-        
-        <div class="card-deck ">
-            <div class="card  border-0 ">
-                <div class="img-block">
-                    <a  class="img-hover"><img class="card-img-top img-fluid "  src="img/custom/52ECBE2E-7524-40F9-8032-589F5E16B653-400x400.jpeg" alt="Card image cap"></a>
-                    <input   class="btn-view" name="submit" type="submit" value="View">
+     
+     <div class="container">             
+        <div class="row">
+            <?php
+                include('includes/config.php'); 
+                $sql = "select * from customtee WHERE All_Status='Active'";
+                $result = $conn ->query($sql);
+
+                while($row=$result->fetch_assoc()):
+            ?>
+                <div class="col-sm-6 col-md-4 col-lg-3">
+                    <div class="card-deck ">
+                        <div class="card  border-0 ">
+                            <div class="img-block">
+                                <a  class="img-hover"><img class="card-img-top img-fluid "  src="img/custom/<?= $row['Prod_Img']?>" alt="Product Img"></a>
+                                 <a href="browse_product.php?view=<?php echo$row['ProductID'];?>"  type="button" class="btn-view">View</a> 
+                            </div>
+                            <div class="card-body">
+
+                                <h6 class="card-title heading-deco"><?= $row['ProductName']?></h6>
+                                <h4 class="card-text price">RM<?=$row['Prod_Price']?></h4>
+
+                            </div>
+                        </div>
+                    </div>    
                 </div>
-                <div class="card-body">
-                    
-                    <h6 class="card-title heading-deco">Round Neck T-Shirt with customized A3 size printing</h6>
-                    <h4 class="card-text price">RM15.00</h4>
-                   
-                </div>
-            </div>
-            <div class="card  border-0 ">
-                  <div class="img-block">
-                    <a  class="img-hover"> <img class="card-img-top img-fluid" src="img/custom/Round-Neck-T-Shirt-with-customized-A3-size-printing-400x400.jpg" alt="Card image cap"></a>
-                    <input  class="btn-view" name="submit" type="submit" value="View">
-                </div>
-          
-                <div class="card-body">
-                    <h6 class="card-title heading-deco">Round Neck T-Shirt with customized A3 size printing</h6>
-                    <h4 class="card-text price">RM25.00</h4>
-                   
-                </div>
-            </div>
-            <div class="card  border-0">
-                  <div class="img-block">
-                      <a class="img-hover"><img class="card-img-top img-fluid" src="img/custom/Round-Neck-T-Shirt-with-customized-front-A3-and-back-A4-size-printing-400x400.jpg" alt="Card image cap"></a>
-                    <input  class="btn-view" name="submit" type="submit" value="View">
-                </div>
-                
-                <div class="card-body">
-                        <h6 class="card-title heading-deco">Round Neck T-Shirt with customized front A3 and back A4 size printing</h6>
-                        <h4 class="card-text price">RM35.00</h4>
-                </div>
-            </div>
-            <div class="card  border-0">
-                  <div class="img-block">
-                      <a class="img-hover"><img class="card-img-top img-fluid" src="img/custom/Round-Neck-T-Shirt-with-customized-front-A4-and-back-A3-size-printing-400x400.jpg" alt="Card image cap"></a>
-                    <input  class="btn-view" name="submit" type="submit" value="View">
-                </div>
-                
-                <div class="card-body">
-                        <h6 class="card-title heading-deco">Round Neck T-Shirt with customized front A4 and back A3 size printing</h6>
-                        <h4 class="card-text price">RM35.00</h4></a>
-                </div>
-            </div>
-            
-            
-       
-    </div>
+            <?php  endwhile;?>
+        </div>
     </div>
     
-     <div class="container">
-        
-        <div class="card-deck ">
-            <div class="card  border-0 ">
-                <div class="img-block">
-                    <a class="img-hover"><img class="card-img-top img-fluid "  src="img/custom/Round-Neck-T-Shirt-with-customized-front-and-back-A4-size-printing-400x400.jpg" alt="Card image cap"></a>
-                    <input  class="btn-view" name="submit" type="submit" value="View">
-                </div>
-                <div class="card-body">
-                    
-                    <h6 class="card-title heading-deco">Round Neck T-Shirt with customized front and back A4 size printing</h6>
-                    <h4 class="card-text price">RM35.00</h4>
-                   
-                </div>
-            </div>
-            <div class="card  border-0 ">
-                  <div class="img-block">
-                      <a class="img-hover"> <img class="card-img-top img-fluid" src="img/custom/Round-Neck-T-Shirt-with-customized-front-and-back-logo-printing-400x400.jpg" alt="Card image cap"></a>
-                    <input  class="btn-view" name="submit" type="submit" value="View">
-                </div>
-          
-                <div class="card-body">
-                    <h6 class="card-title heading-deco">Round Neck T-Shirt with customized front and back logo printing</h6>
-                    <h4 class="card-text price">RM30.00</h4>
-                   
-                </div>
-            </div>
-            <div class="card  border-0">
-                  <div class="img-block">
-                      <a class="img-hover"><img class="card-img-top img-fluid" src="img/custom/Round-Neck-T-Shirt-with-customized-front-logo-and-back-A3-size-printing-400x400.jpg" alt="Card image cap"></a>
-                   <input  class="btn-view" name="submit" type="submit" value="View">
-                </div>
-                
-                <div class="card-body">
-                    <h6 class="card-title heading-deco">Round Neck T-Shirt with customized front logo and back A3 size printing</h6>
-                        <h4 class="card-text price">RM30.00</h4>
-                </div>
-            </div>
-            <div class="card  border-0">
-                  <div class="img-block">
-                      <a class="img-hover"><img class="card-img-top img-fluid" src="img/custom/Round-Neck-T-Shirt-with-customized-front-logo-and-back-A4-size-printing-400x400.jpg" alt="Card image cap"></a>
-                    <input  class="btn-view" name="submit" type="submit" value="View">
-                </div>
-                
-                <div class="card-body">
-                    <h6 class="card-title heading-deco">Round Neck T-Shirt with customized front logo and back A4 size printing</h6>
-                        <h4 class="card-text price">RM30.00</h4>
-                </div>
-            </div>
-            
-            
-       
-    </div>
-    </div>
-    
-     <div class="container">
-        
-        <div class="card-deck ">
-            <div class="card  border-0 ">
-                <div class="img-block">
-                    <a class="img-hover"><img class="card-img-top img-fluid "  src="img/custom/Round-Neck-T-Shirt-with-customized-logo-size-printing-400x400.jpg" alt="Card image cap"></a>
-                    <input  class="btn-view" name="submit" type="submit" value="View">
-                </div>
-                <div class="card-body">
-                    
-                    <h6 class="card-title heading-deco">Round Neck T-Shirt with customized logo printing</h6>
-                    <h4 class="card-text price">RM12.00</h4>
-                   
-                </div>
-            </div>
-            <div class="card  border-0 ">
-                
-            </div>
-            <div class="card  border-0">
-                 
-            </div>
-            <div class="card  border-0">
-                
-            </div>
-            
-            
-       
-    </div>
-    </div>
-    
-    </form>
-    
+ 
     
      <a class="gotopbtn" id="topbtn" href="#"> <i class="fas fa-angle-up"></i></a>    
      <script type="text/javascript" src="js/appeargotop.js"></script>
@@ -266,6 +154,7 @@
             modal.style.display = "none";
         }
     }
+    
    
     </script>
   

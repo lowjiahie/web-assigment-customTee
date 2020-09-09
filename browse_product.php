@@ -1,3 +1,8 @@
+<?php
+     session_start();
+    
+?>
+
 <!doctype html>
 <html lang="en" class="h-100">
   <head>
@@ -36,16 +41,41 @@
     margin-right:2px;
     font-size: 15px;
   }
+    .msg {
+            margin: 30px auto; 
+            padding: 10px; 
+            border-radius: 5px; 
+            width: 50%;
+            text-align: center;
+        }   
+
     </style>
 
     
 </head>
 <body>
 
-    <?php
+    <?php       
         include('includes/clientnav.php'); 
-    ?>
+        require_once("includes/config.php"); 
+        if(isset($_GET['view'])){
+            $id = $_GET['view'];
+            $res = mysqli_query($conn,"SELECT * FROM customtee WHERE ProductID=$id ");
 
+            while($row= mysqli_fetch_assoc($res)){
+                $ProdID = $row['ProductID'];
+                $ProdN = $row['ProductName'];
+                $ProdP = $row['Prod_Price'];
+                $ProdW = $row['Prod_Weight'];
+                $ProdM = $row['Prod_ Material'];
+                $ProdImg = $row['Prod_Img'];
+                $status = $row['All_Status'];
+            }
+            
+            
+        }
+    ?>
+    
     <div class="container" style="margin-top:20px; margin-bottom:-30px ; ">
     <div class="row">
         <div class="col">
@@ -60,7 +90,26 @@
         </div>
     </div>
     </div>
-    
+          <?php if (isset($_SESSION['message'])&&isset($_SESSION['check'])){?>
+        <?php
+            if($_SESSION['check']=='false'){
+                $style='color:#fc3632;background:#FFCCCB; border: 1px solid #fc3632;';
+            }else{
+                $style='color:#3c763d;background:#dff0d8; border: 1px solid #3c763d;';
+                                        
+            }
+            
+        ?>
+    <div class="msg" style="<?php echo $style?>">
+		<?php 
+                        echo $_SESSION['message'];
+                       
+                        unset($_SESSION['check']);
+                        unset($_SESSION['message']);
+
+                ?>
+	</div>
+      <?php };?>
     <div class="container">
     <div class="row">
         <div class="col-12 col-md-5 col-sm-12">
@@ -69,18 +118,33 @@
                 <div class="preview col-sm-12">
 						
 			<div class="preview-pic tab-content">
-                            <div class="tab-pane active" id="pic-1"><img src="img/custom/52ECBE2E-7524-40F9-8032-589F5E16B653-400x400.jpeg" /></div>
-                            <div class="tab-pane" id="pic-2"><img src="img/custom/font.PNG" /></div>
-                            <div class="tab-pane" id="pic-3"><img src="img/t-shirts/men/cotton/1414120783_ct7105.x82073.jpg" ></div>
-                            <div class="tab-pane" id="pic-4"><img src="img/t-shirts/men/cotton/1457495547_ct7108-768x768.jpg" ></div>
-                            <div class="tab-pane" id="pic-5"><img src="img/t-shirts/men/cotton/1414120768_ct7102.x82073.jpg" ></div>
+                            <div class="tab-pane active" id="pic-1"><img src="img/custom/<?=$ProdImg?>" /></div>
+                            <div class="tab-pane" id="pic-2"><img src="img/custom/crew_front.png" /></div>
+                            <div class="tab-pane" id="pic-3"><img src="img/custom/crew_back.png" /></div>
+                            <?php 
+                                $sql = "select * from color";
+                                $result = $conn ->query($sql);
+                                $i=3;
+                                while($row=$result->fetch_assoc()):
+                                $i++;
+                            ?>
+                            <div class="tab-pane" id="pic-<?php echo $i?>"><img src="img/custom/<?= $row['Color_Img']?>" ></div>
+                             <?php endwhile;?>
 			</div>
 			    <ul class="preview-thumbnail nav nav-tabs">
-                                <li class="active"><a class="pic2"data-target="#pic-1" data-toggle="tab"><img class="pic1" src="img/custom/52ECBE2E-7524-40F9-8032-589F5E16B653-400x400.jpeg" /></a></li>
-                                <li><a href=".pic2" data-target="#pic-2" data-toggle="tab"><img class="pic2" src="img/custom/font.PNG" /></a></li>
-                                <li><a href=".pic2" data-target="#pic-3" data-toggle="tab"><img class="pic2" src="img/t-shirts/men/cotton/1414120783_ct7105.x82073.jpg" /></a></li>
-                                <li><a href=".pic2" data-target="#pic-4" data-toggle="tab"><img class="pic2" src="img/t-shirts/men/cotton/1457495547_ct7108-768x768.jpg" /></a></li>
-                                <li><a href=".pic2" data-target="#pic-5" data-toggle="tab"><img class="pic2" src="img/t-shirts/men/cotton/1414120768_ct7102.x82073.jpg" /></a></li>
+                                <li class="active"><a class="pic2" data-target="#pic-1" data-toggle="tab"><img class="pic1" src="img/custom/<?=$ProdImg?>" /></a></li>
+                                <li><a href=".pic2" data-target="#pic-2" data-toggle="tab"><img class="pic2" src="img/custom/crew_front.png" /></a></li>
+                                <li><a href=".pic2" data-target="#pic-3" data-toggle="tab"><img class="pic2" src="img/custom/crew_back.png"/></a></li>
+                                <?php 
+                                $sql = "select * from color";
+                                $result = $conn ->query($sql);
+                                $i=3;
+                                while($row=$result->fetch_assoc()):
+                                $i++;
+                                ?>
+                                <li><a href=".pic2" data-target="#pic-<?php echo $i?>" data-toggle="tab"><img class="pic2" src="img/custom/<?= $row['Color_Img']?>" /></a></li>
+                               
+                                <?php  endwhile;?>
 			    </ul>			
 		</div>
 
@@ -93,11 +157,15 @@
                 <div class="col-12 col-md-12 col-lg-10">
                     <div class="card border-0">
                         <div class="card-body">
-                            <h4 class="card-title h4">Round Neck T-Shirt with customized A3 size printing</h4>
-                            <h3 class="card-text price">RM 15.00</h3>
-                            <p class="card-text text-set text-muted"><small>Material/Fabric : 100% Cotton<br>Weight: 200g/m²<br>Sizes Available : XS-3XL (Unisex)<br>Service: Heat Transfer Printing</small></p>
-                            <form id="form">
+                            <h4 class="card-title h4"><?=$ProdN ?></h4>
+                            <h3 class="card-text price">RM<?=$ProdP?></h3>
+                            <p class="card-text text-set text-muted"><small>Material/Fabric : <?=$ProdM?><br>Weight:<?=$ProdW?><br>Sizes Available : XS-XL(Unisex)<br>Service: Heat Transfer Printing</small></p>
+                            <form id="form" method="POST" action="cart_action.php">
                             <table>
+                                 <input id="product_id" name="product_id" value="<?php echo $ProdID?>" type="hidden">
+                                 <input id="product_name" name="product_name" value="<?php echo $ProdN?>" type="hidden">
+                                 <input id="product_img" name="product_img" value="<?php echo $ProdImg?>" type="hidden">
+                                 <input id="product_price" name="product_price" value="<?php echo $ProdP?>" type="hidden">
                                 <tbody>
                                     <tr>
                                         <td>
@@ -107,14 +175,12 @@
                                     <tr>
                                         <td>
                                             <span>
-                                               <select id="selecter" onChange="dropdownTip(this.value)" name="search_type" style="margin-right:10px; margin-top:4px; margin-bottom: 7px;">
+                                               <select id="selecter" onChange="dropdownTip(this.value)" name="size" style="margin-right:10px; margin-top:4px; margin-bottom: 7px;">
                                                     <option selected="selected" value="XS">XS</option>    
                                                     <option value="S">S</option>
                                                     <option value="M">M</option>
                                                     <option value="L">L</option>
                                                     <option value="XL">XL</option>
-                                                    <option value="2XL">2XL</option>
-                                                    <option value="3XL">3XL</option>
                                                </select>
                                                 
                                             </span>
@@ -127,18 +193,18 @@
                                     </tr>
                                     <tr>
                                         <td>
-                                             <div class="color-choose">
-                                                <div>
-                                                  <input data-image="red" type="checkbox" id="red" name="color" value="red" onclick="onlyOne(this)" onChange="showColor(this.value)">
-                                                  <label for="red"><span></span></label>
+                                             <div class="color-choose" >
+                                                <div >
+                                                    <input data-image="red" type="checkbox" id="red" name="color" value="Black" onclick="onlyOne(this)" onChange="showColor(this.value)">
+                                                  <label for="red"><span style="background-color: #323232;"></span></label>
                                                 </div>
                                                 <div>
-                                                  <input data-image="blue" type="checkbox" id="blue" name="color" value="blue" onclick="onlyOne(this)"  onChange="showColor(this.value)">
-                                                  <label for="blue"><span></span></label>
+                                                  <input data-image="blue" type="checkbox" id="blue" name="color" value="Blue" onclick="onlyOne(this)"  onChange="showColor(this.value)">
+                                                  <label for="blue"><span style="background-color:#314780;"></span></label>
                                                 </div>
                                                 <div>
-                                                  <input data-image="black" type="checkbox" id="black" name="color" value="black" onclick="onlyOne(this)"  onChange="showColor(this.value)">
-                                                  <label for="black"><span> </span></label>
+                                                  <input data-image="black" type="checkbox" id="black" name="color" value="Red" onclick="onlyOne(this)"  onChange="showColor(this.value)">
+                                                  <label for="black"><span style="background-color: #C91524;"> </span></label>
                                                 </div>
                                              </div>
                                         </td>
@@ -146,15 +212,15 @@
                                     </tr>
                                      <tr>
                                         <td>
-                                            <span style="color:">Method : &nbsp;</span><span id="" ></span>
+                                            <span style="color:">Method : &nbsp;</span><span id="method" ></span>
                                         </td>
                                     </tr>
                                     <tr>
                                         <td>
                                             
-                                         <select id="method" name="method" style="margin-right:10px; margin-top:4px; margin-bottom: 7px;">
-                                                    <option selected="selected" value="Design-by-yourself">Design by yourself</option>    
-                                                    <option value="Design-by-myprinting">Design by Myprinting</option>
+                                         <select id="method" name="method" onchange="showMethod(this.value)" style="margin-right:10px; margin-top:4px; margin-bottom: 7px;">
+                                                <option selected="selected" value="Self Design" >Self Design</option>    
+                                                <option value="Design by Us">Design by Us</option>
                                          </select>
                                         </td>
                                     </tr>
@@ -163,7 +229,8 @@
                                             <div>
                                              <label for="quantity">QTY:</label>
                                               <input type="number" id="quantity" name="quantity" min="1" max="50" value="1">
-                                              <input onclick="addToCart()" class="btn btn-primary btn-lg" type="button" name="add" value="Add to cart" />
+                                               <button id="add" name="add" value="add" class="btn btn-primary">Add to Cart</button>
+
                                              </div>
                                         </td>
                                     </tr>
@@ -210,21 +277,26 @@
             <div class="card-body">
             <div class="tab-content">
                 <div role="tabpanel" class="tab-pane active" id="colors">
-                    <img class="img-fluid" src="img/t-shirts/men/cotton/oren-sport-ct71-cotton-t-shirt.x82073.jpg" alt="Card image cap">
+                    <img class="img-fluid" src="img/custom/type_shirts.jpg" alt="Card image cap">
                 </div>
                 <div role="tabpanel" class="tab-pane fade" id="size">
-                    <img class="img-fluid" src="img/t-shirts/men/cotton/SC_CT71.png" alt="Card image cap">
+                    <img class="img-fluid" src="img/custom/size_chart.png" alt="Card image cap">
                 </div>
                 <div role="tabpanel" class="tab-pane fade" id="download">
                     <p class="h5 mb-5">Download and start your design</p>
                     <div class="row justify-content-center">
                         <div class="col-4">
-                            <img class="img-fluid mb-5" src="img/custom/custom-design/font.PNG" alt="Card image cap">
+                            <img class="img-fluid mb-5" src="img/custom/crew_front.png" alt="front.png">
+                           
+                        </div>
+                        <div class="col-4">
+                            <img class="img-fluid mb-5" src="img/custom/crew_back.png" alt="back.png">
+                           
                         </div>
                      
                     </div>
                     
-                    <a href="img/custom/crew_front.png"class="btn btn-secondary btn-lg" download><i class="fa fa-download"></i> Download</a>
+                    <a href="img/custom/custom.rar"class="btn btn-secondary btn-lg" download><i class="fa fa-download"></i> Download</a>
                 </div>
         	</div>
         </div>
@@ -250,13 +322,41 @@
         }
     }
        function dropdownTip(value){
-        console.log(value);
+        
+        if(value === "XS"){
+            value ="XS";
+        }else if(value ==="S"){
+            value = "S";
+        }else if (value ==="M"){
+            value = "M";
+        }else if(value ==="L"){
+            value ="L";
+        }else if(value ==="XL"){
+            value = "XL";
+        }else{
+            value="";
+        }
+        
+        
         document.getElementById("result").innerHTML = value;
     }
        function showColor(value){
           
-            console.log(value);
+            if(value === "Black"){
+                value ="Black";
+            }else if(value ==="Blue"){
+                value = "Blue";
+            }else if (value ==="Red"){
+                value = "Red";
+            }else{
+                value="";
+            }
             document.getElementById("color-name").innerHTML = value;
+    }
+       function showMethod(value){
+          
+            console.log(value);
+            document.getElementById("method").innerHTML = value;
     }
     
     function onlyOne(checkbox) {
@@ -268,6 +368,8 @@
            
     })
     }
+    
+  
   
     </script>
     <script src="js/addtocart.js"></script>
@@ -275,3 +377,4 @@
     <script>window.jQuery || document.write('<script src="../assets/js/vendor/jquery.slim.min.js"><\/script>')</script><script src="assets/dist/js/bootstrap.bundle.js"></script>
 </body>
 </html>
+

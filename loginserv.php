@@ -22,7 +22,7 @@ and open the template in the editor.
                 $pass=$_POST['pass'];
                 $conn = mysqli_connect("localhost","root","");
                 $db=mysqli_select_db($conn,"assignment");
-                $query = mysqli_query($conn,"SELECT * FROM userpass WHERE pass='$pass' AND user='$user'");
+                $query = mysqli_query($conn,"SELECT * FROM userregister WHERE password_1='$pass' AND username='$user'");
                 
                 $rows = mysqli_num_rows($query);
                 if($rows ==1){

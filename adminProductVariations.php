@@ -1,6 +1,3 @@
-<?php
- include('admin_php_code.php'); 
-?>
 <!DOCTYPE html>
 <html>
 
@@ -19,15 +16,7 @@
     <!-- Font Awesome JS -->
     <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
     <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
-    <style>
-        .msg {
-            margin: 30px auto; 
-            padding: 10px; 
-            border-radius: 5px; 
-            width: 50%;
-            text-align: center;
-        }   
-    </style>
+
 </head>
 
 <body>
@@ -40,84 +29,76 @@ include('includes/adminnav.php');
 ?>
 
     <div class="container ">
-     <h4 class="h4">Product</h4>
+     <h4 class="h4">Product Variations</h4>
     <div class="row">
        <div class="col">
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="#">Dashboard</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">All Product</li>
+                    <li class="breadcrumb-item"><a href="#">All Product</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Product Variations</li>
                 </ol>
             </nav>
         </div>
         
     </div>
+     
     </div>
-      <?php if (isset($_SESSION['message'])&&isset($_SESSION['check'])){?>
-        <?php
-            if($_SESSION['check']=='false'){
-                $style='color:#fc3632;background:#FFCCCB; border: 1px solid #fc3632;';
-            }else{
-                $style='color:#3c763d;background:#dff0d8; border: 1px solid #3c763d;';
-            }
-        ?>
-    <div class="msg" style="<?php echo $style?>">
-		<?php 
-    
-			echo $_SESSION['message']; 
-			unset($_SESSION['message']);
-			unset($_SESSION['check']);
-                ?>
-	</div>
-      <?php };?>
+     
     <div class="container mb-2">
     <div class="row">
         <div class="col-12">
-            <div class="table-responsive">  
+            <div class="table-responsive">
                 <table class="table table-striped">
                     <thead>
                         <tr>
-                            <th scope="col">ID</th>
+                            <th scope="col">No</th>
+                            <th scope="col">Product ID</th>
                             <th scope="col">Image</th>
-                            <th scope="col">Name</th>
-                            <th scope="col">Weight</th>
-                            <th scope="col">Material</th>
-                            <th scope="col">Price</th>
+                            <th scope="col">Stock</th>
+                            <th scope="col">Color</th>
+                            <th scope="col">Size</th>
                             <th scope="col">Status</th>
                             <th scope="col">Action</th>
-                       
                         </tr>
                     </thead>
                     <tbody>
+                        
                         <?php
                             include('includes/config.php'); 
-                            $sql = "select * from customtee";
-                            $result = $conn ->query($sql);
+                            if(isset($_GET['view'])){
+                                $id = $_GET['view'];
+                                
+                                $sql = "SELECT DISTINCT PS.Stock_ID,Prod_ID,C.Color_Img,Color_Name,PS.Stock,S.Size_Name,PS.Stock_Status FROM customtee CT,size S,color C,prod_stock PS WHERE PS.Prod_ID =$id AND C.Color_ID=PS.Color_ID AND S.Size_ID=PS.Size_ID  ORDER BY PS.Color_ID ";
+                                $result = $conn ->query($sql);
+                            }
+                            $i=0;
                             while($row=$result->fetch_assoc()):
+                            $i++;
                         ?>
                         <tr>
-                            <td><?= $row['ProductID']?></td>
-                            <td><img style="width: 70px;height: 70px;" src="img/custom/<?= $row['Prod_Img']?>" /></td>
-                            <td><?= $row['ProductName']?></td>
-                            <td><?= $row['Prod_Weight']?></td>
-                            <td><?= $row['Prod_ Material']?></td>
-                            <td>RM<?= $row['Prod_Price']?></td>
-                            <?php   
+                            <td><?php echo $i?></td>
+                            <td><?= $row['Prod_ID']?></td>
+                            <td><img style="width: 70px;height: 70px;" src="img/custom/<?= $row['Color_Img']?>" /></td>
+                            <td><?= $row['Stock']?></td>
+                            <td><?= $row['Color_Name']?></td>
+                            <td><?= $row['Size_Name']?></td>
+                             <?php   
                                     $btnColor="";
-                                   if($row['All_Status']==='Active'){
+                                   if($row['Stock_Status']==='Active' ){
                                        $btnColor = "btn-primary";
-                                   }else if($row['All_Status']=='Inactive'){
+                                   }else if($row['Stock_Status']=='Inactive'){
                                         $btnColor = "btn-danger";
                                    }
                             ?>
-                            <td><input type="button"  class="btn btn-sm <?php echo $btnColor;?>"value="<?= $row['All_Status']?>" disabled></td>
-                            <td class="text-right">
-                                <a href="adminEditProduct.php?edit=<?php echo$row['ProductID'];?>" type="button" class="btn btn-sm btn-secondary"><i class="fas fa-edit"></i></a> 
-                                <a href="adminProductVariations.php?view=<?php echo$row['ProductID'];?>" type="button" class="btn btn-sm btn-info"><i class="fas fa-eye"></i> </a> 
-                                <a href="adminAddProductVariation.php?addV=<?php echo$row['ProductID'];?>" type="button" class="btn btn-sm btn-info"><i class="fas fa-plus-square"></i> </a> 
+                            <td><input type="button" class="btn btn-sm btn-primary <?php echo $btnColor;?>" value="<?= $row['Stock_Status']?>" disabled></td>
+                            <td class="text-left">
+                            <a href="adminEditProductVariations.php?edit=<?=$row['Stock_ID']?>" type="button" class="btn btn-sm btn-secondary"><i class="fas fa-edit"></i></a> 
+                            <a href="admin_php_code.php?del=<?=$row['Stock_ID']?>" type="button" class="btn btn-sm btn-danger"><i class="fa fa-trash"></i> </a> 
+                        
                             </td>
                         </tr>
-                    <?php  endwhile;?>
+                    <?php endwhile;?>
                     </tbody>
                 </table>
             </div>
